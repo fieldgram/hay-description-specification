@@ -1,0 +1,21 @@
+---
+layout: default
+title: Introduction
+nav_order: 2
+---
+
+# Introduction
+
+Hay is a global agricultural commodity that nourishes dairy and beef  cattle, horses, goats, camels, sheep, and other animals. In the U.S.,  hay ranks among the leading cash crops in annual sales value, along with  corn, wheat, and soybeans. Unlike these other products for which exchange-traded-futures markets exist, however, hay trades solely on an "over-the-counter" basis, whether through peer-to-peer negotiation, dealers ("merchants"), or brokers.
+  
+Many experts cite a lack of common grading standards as a factor hampering the market for hay. The lack of standards and related disclosures impede price discovery, create downstream inefficiencies, and can even be negative factors for animal health. As a result, hay tends to trade locally to a greater extent than may be economically efficient. Producers and consumers may lack a sound basis for predicting supply and demand, resulting in unnecessary shortages and excessive price volatility. Suppliers of factors of production, whether for production automation, fertilization, weed control, testing, transportation, or other goods and services may lack the price signals and other data that might otherwise induce them to invest in development of better products and distribution means.
+  
+The lack of hay standards is a long-established problem that dates at least to the late nineteenth century when centralized hay markets existed in Boston, Chicago, New York, San Francisco, and  elsewhere. For at least eighty years various associations of hay  producers and merchants, the United States Department of Agriculture, and others have sought to promulgate useful grading standards. Experts from universities and agricultural extension programs have written on the need for standards and benefits that market adoption of such standards may hold. Market participants have embraced standards proposals from time to time, but none of these has achieved common and long-standing use.
+  
+Several market developments renew hope that broadly-accepted standards may finally emerge. Alfalfa hay has become a significant export commodity for producers in Australia, Canada, South Africa, the United States, and elsewhere. Its consumers require that producers make certain representations as to the quality and healthfulness of their products. Chemical and spectroscopic tests are now available to supplement and even supplant the old methods of visual inspection for hay-grading purposes, and we have new means of tracking hay from field to its ultimate consumer. Sound testing protocols and laboratories are readily available to producers and consumers. And the Internet provides a global, relatively inexpensive way for market participants to collaborate on the development of standards and to communicate standards-compliant information concerning hay products.
+  
+New and improved commodities information systems may be able to assist the hay market in several ways, including provision of tools to help producers better characterize their hay for marketing purposes. For maximum effectiveness, however, such systems must utilize formal, well-structured "product definitions." The term "product definition" means a standard description model for a financial good or commodity that supports and promotes expression of substantially all of its economically-salient characteristics. In commodities futures markets, for example, contract specifications serve as the product definitions for exchange-traded goods.
+  
+If grading standards for hay were well-established and economically meaningful, product definitions for hay would almost certainly reference them. For example, product definitions would likely include one or more fields for expression of hay grades and related information. But in the absence of such grading standards, the use of well-designed product definitions or standard description models can help to reveal a sound basis for grading standards through actual market practice and data.
+  
+This document sets forth preliminary requirements for a workable product definition for hay, suitable for use in commodities information systems, electronic markets, and internal systems, as well as traditional, over-the-counter sourcing and marketing arrangements.
