@@ -5,7 +5,7 @@ nav_order: 3
 ---
 # References
 
-302 KAR 37:010. [Standard Hay Grading Program for the State of Kentucky](http://www.lrc.state.ky.us/kar/302/037/010.pdf) \[PDF\]. Last retrieved June 19, 2018. File no longer available at the URL. Seeking replaacement.
+302 KAR 37:010. [Standard Hay Grading Program for the State of Kentucky](http://www.lrc.state.ky.us/kar/302/037/010.pdf) \[PDF\]. Last retrieved June 19, 2018. File no longer available at that URL. Seeking replacement.
 
 Baker, R. and S. Ball. 2011. [Variations in Alfalfa Hay Grading](http://lubbock.tamu.edu/files/2011/10/nmsugrading_10.pdf) \[PDF\]. New Mexico State University Cooperative Extension Service, Guide A-329. Retrieved September 16, 2019.
   
