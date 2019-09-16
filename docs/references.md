@@ -7,7 +7,7 @@ nav_order: 3
 
 302 KAR 37:010. [Standard Hay Grading Program for the State of Kentucky](http://www.lrc.state.ky.us/kar/302/037/010.pdf) \[PDF\]. Retrieved June 19, 2018.
 
-Baker, R. and S. Ball. 2011. [Variations in Alfalfa Hay Grading](http://lubbock.tamu.edu/files/2011/10/nmsugrading_10.pdf0 \[PDF\]. New Mexico State University Cooperative Extension Service, Guide A-329. Retrieved June 19, 2018.
+Baker, R. and S. Ball. 2011. [Variations in Alfalfa Hay Grading](http://lubbock.tamu.edu/files/2011/10/nmsugrading_10.pdf) \[PDF\]. New Mexico State University Cooperative Extension Service, Guide A-329. Retrieved June 19, 2018.
   
 Ball, D.M., M. Collins, G.D. Lacefield, N.P. Martin, D.A. Mertens, K.E. Olson, D.H. Putnam, D.J. Undersander, and M.W. Wolf. 2001. [Understanding Forage Quality](http://www.foragetesting.org/files/UnderstandingForageQuality.pdf) \[PDF\]. American Farm Bureau Federation Publication 1-01, Park Ridge, IL, via National Forage Testing Association. Retrieved June 19, 2018.
   
