@@ -5,3 +5,12 @@ title: Hay Description Specification
 aux_links:
   "Hay Description Specification on GitHub":
     - "//github.com/fieldgram/hay-description-specification"
+
+# Enable or disable the site search
+search_enabled: true
+
+# Set the search token separator for hyphenated-word search:
+search_tokenizer_separator: /[\s/]+/
+
+# Enable or disable heading anchors
+heading_anchors: true
