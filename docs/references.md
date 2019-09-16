@@ -5,4 +5,4 @@ nav_order: 3
 ---
 # References
 
-[Fieldgram](https://fieldgram.com)
+[Standard Hay Grading Program for the State of Kentucky](http://www.lrc.state.ky.us/kar/302/037/010.pdf)
