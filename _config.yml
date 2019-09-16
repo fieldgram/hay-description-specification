@@ -1,1 +1,7 @@
 remote_theme: pmarsceill/just-the-docs
+title: Hay Description Specification
+
+# Aux links for the upper right navigation
+aux_links:
+  "Hay Description Specification on GitHub":
+    - "//github.com/fieldgram/hay-description-specification"
