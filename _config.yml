@@ -17,3 +17,14 @@ heading_anchors: true
 
 # Footer content appears at the bottom of every page's main content
 footer_content: "Copyright &copy; 2015-2019 Fieldgram Inc. Distributed by an <a href=\"https://github.com/fieldgram/hay-description-specification/blob/master/LICENSE\">MIT license.</a>"
+
+plugins:
+  - jekyll-seo-tag
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
