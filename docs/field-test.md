@@ -6,6 +6,12 @@ nav_order: 4
 # Forage analysis fields
 
 Field [`hay_tested`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>[ true | false | unknown ]</dd>
+</dl>
 
 Field [`hay_sample_date`]()
 
