@@ -5,6 +5,8 @@ nav_order: 4
 ---
 # Forage analysis fields
 
+## Sample processing
+
 Field [`hay_tested`]()
 
 Field [`hay_sample_date`]()
@@ -21,9 +23,39 @@ Field [`hay_testing_method`]()
 
 Field [`hay_testing_date`]()
 
+## Base values
+
 Field [`moisture`]()
 
 Field [`dry_matter`]()
+
+## Index values
+
+Field [`relative_feed_value`]()
+
+## NRC 2001 energy
+
+Field [`digestible_energy, 1X, Mcal/Lb`]()
+
+Field [`metabolizable_energy, 1X, Mcal/Lb`]()
+
+Field [`net_energy_lactation, 3X, Mcal/Lb`]()
+
+Field [`net_energy_maintenance, 3X, Mcal/Lb`]()
+
+Field [`net_energy_gain, 3X, Mcal/Lb`]()
+
+Field [`digestible_energy, 1X, Mcal/Kg`]()
+
+Field [`metabolizable_energy, 1X, Mcal/Kg`]()
+
+Field [`net_energy_lactation, 3X, Mcal/Kg`]()
+
+Field [`net_energy_maintenance, 3X, Mcal/Kg`]()
+
+Field [`net_energy_gain, 3X, Mcal/Kg`]()
+
+Field [`TDN1X`]()
 
 ## Protein and protein fractions
 
@@ -40,6 +72,12 @@ Field [`soluble_protein_%_cp`]()
 Field [`degradable_protein_%_cp`]()
 
 Field [`neutral_detergent_insoluble_crude_protein`]()
+
+## Amino acids
+
+Field [`lysine`]()
+
+Field [`methionine`]()
 
 ## Carbohydrates
 
@@ -61,7 +99,6 @@ Field [`in_vitro_true_digestibility_30hr, % of DM`]()
 
 Field [`neutral_detergent_fiber_digestibility_30hr, % of NDF`]()
 
-
 ## Fat
 
 Field [`crude_fat`]()
@@ -70,7 +107,7 @@ Field [`total_fatty_acids`]()
 
 Field [`rumen_unsaturated_fatty_acid_load`]()
 
-## Energy
+## Energy and digestibility
 
 Field [`total_digestible_nutrients`]()
 
@@ -79,6 +116,10 @@ Field [`net_energy_lactation, Mcal/Lb`]()
 Field [`net_energy_maintenance, Mcal/Lb`]()
 
 Field [`net_energy_gain, Mcal/Lb`]()
+
+Field [`kd, %/hr`]()
+
+Field [`horse_digestible_energy, Mcal/Lb`]()
 
 ## Minerals
 
@@ -105,36 +146,3 @@ Field [`copper_PPM`]()
 Field [`manganese_PPM`]()
 
 Field [`molybdenum_PPM`]()
-
-Field [`kd, %/hr`]()
-
-Field [`lysine`]()
-
-Field [`methionine`]()
-
-Field [`horse_digestible_energy, Mcal/Lb`]()
-
-Field [`digestible_energy, 1X, Mcal/Lb`]()
-
-Field [`metabolizable_energy, 1X, Mcal/Lb`]()
-
-Field [`net_energy_lactation, 3X, Mcal/Lb`]()
-
-Field [`net_energy_maintenance, 3X, Mcal/Lb`]()
-
-Field [`net_energy_gain, 3X, Mcal/Lb`]()
-
-Field [`digestible_energy, 1X, Mcal/Kg`]()
-
-Field [`metabolizable_energy, 1X, Mcal/Kg`]()
-
-Field [`net_energy_lactation, 3X, Mcal/Kg`]()
-
-Field [`net_energy_maintenance, 3X, Mcal/Kg`]()
-
-Field [`net_energy_gain, 3X, Mcal/Kg`]()
-
-Field [`TDN1X`]()
-
-Field [`relative_feed_value`]()
-
