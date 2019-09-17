@@ -25,6 +25,8 @@ Field [`moisture`]()
 
 Field [`dry_matter`]()
 
+## Protein and protein fractions
+
 Field [`crude_protein`]()
 
 Field [`available_protein`]()
@@ -38,6 +40,8 @@ Field [`soluble_protein_%_cp`]()
 Field [`degradable_protein_%_cp`]()
 
 Field [`NDICP`]()
+
+## Carbohydrates
 
 Field [`ADF`]()
 
@@ -53,6 +57,8 @@ Field [`WSC`]()
 
 Field [`ESC`]()
 
+## Fat
+
 Field [`crude_fat`]()
 
 Field [`total_fatty_acids`]()
@@ -63,6 +69,8 @@ Field [`Ash`]()
 
 Field [``]()
 
+## Energy
+
 Field [`TDN`]()
 
 Field [`NEL, Mcal/Lb`]()
@@ -71,7 +79,7 @@ Field [`NEM, Mcal/Lb`]()
 
 Field [`NEG, Mcal/Lb`]()
 
-Field [`relative_feed_value`]()
+## Minerals
 
 Field [`calcium`]()
 
@@ -118,3 +126,6 @@ Field [`NEM, 3X, Mcal/Kg`]()
 Field [`NEG, 3X, Mcal/Kg`]()
 
 Field [`TDN1X`]()
+
+Field [`relative_feed_value`]()
+
