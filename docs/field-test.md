@@ -15,7 +15,7 @@ Field [`hay_tested`]()
   <dt>Valid values</dt>
   <dd>= [ true | false | unknown ]</dd>
 </dl>
-
+{: .mb-lg-8 }
 
 Field [`hay_sample_date`]()
 
