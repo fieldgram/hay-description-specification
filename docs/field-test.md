@@ -7,14 +7,14 @@ nav_order: 4
 
 ## Sample processing
 
-Field [`hay_tested`]()
+### Field [`hay_tested`]()
 
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
   <dt>Valid values</dt>
   <dd>= [ true | false | unknown ]</dd>
-</dl>{: .mb-lg-8 }
+</dl>
 
 Field [`hay_sample_date`]()
 
