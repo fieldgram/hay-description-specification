@@ -7,133 +7,351 @@ nav_order: 4
 
 ## Sample processing
 
-### Field [`hay_tested`]()
+<details>
+  <summary>Click to expand</summary>
 
-<dl>
-  <dt>Data type</dt>
-  <dd>enum</dd>
-  <dt>Valid values</dt>
-  <dd>= [ true | false | unknown ]</dd>
-</dl>
+  ### Field [`hay_tested`]()
 
-### Field [`hay_sample_date`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>enum</dd>
+    <dt>Valid values</dt>
+    <dd>= [ true | false | unknown ]</dd>
+  </dl>
 
-<dl>
-  <dt>Data type</dt>
-  <dd>datetime</dd>
-  <dt>Valid value</dt>
-  <dd>A date in YYYYMMDD format representing the sample date for this hay.</dd>
-</dl>
+  ### Field [`hay_sample_date`]()
 
-Field [`hay_sampler_independent`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>datetime</dd>
+    <dt>Valid values</dt>
+    <dd>A date in YYYYMMDD format representing the sample date for this hay.</dd>
+  </dl>
 
-Field [`hay_sampler_certified`]()
+  ### Field [`hay_sampler_independent`]()
 
-Field [`hay_sampling_protocol`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>enum</dd>
+    <dt>Valid values</dt>
+    <dd>= [ true | false | unknown ]</dd>
+  </dl>
 
-Field [`hay_testing_laboratory`]()
+  ### Field [`hay_sampler_certified`]()
 
-Field [`hay_testing_method`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>enum</dd>
+    <dt>Valid values</dt>
+    <dd>= [ true | false | unknown ]</dd>
+  </dl>
 
-Field [`hay_testing_date`]()
+  ### Field [`hay_sampling_protocol`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>enum</dd>
+    <dt>Valid values</dt>
+    <dd>= [ NFTA | other ]</dd>
+  </dl>
+
+  ### Field [`hay_testing_laboratory`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>enum</dd>
+    <dt>Valid values</dt>
+    <dd>An enumerated value corresponding to a specific laboratory from an open, freely-available database maintained by Fieldgram or another organization or, if self-tested, "Internal lab".</dd>
+  </dl>
+
+  ### Field [`hay_testing_method`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>enum</dd>
+    <dt>Valid values</dt>
+    <dd>= [ Chemical analysis | Near Infrared Reflectance (NIR) spectroscopy | Both chemical analysis and NIR ]</dd>
+  </dl>
+
+  ### Field [`hay_testing_date`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>datetime</dd>
+    <dt>Valid values</dt>
+    <dd>A date in YYYYMMDD format representing the testing date for this hay.</dd>
+  </dl>
+  
+</details>
 
 ## Base values
 
-Field [`moisture`]()
+<details>
+  
+  <summary>Click to expand</summary>
 
-Field [`dry_matter`]()
+  ### Field [`moisture_content`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding the percentage of water in the sample. This is the complement of dry matter.</dd>
+  </dl>
+
+  ### Field [`dry_matter`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding the percentage of dry matter in the sample. This is the complement of moisture content.</dd>
+  </dl>
+
+</details>
 
 ## Index values
+  
+<details>
+  
+  <summary>Click to expand</summary>
 
-Field [`relative_feed_value`]()
+  ### Field [`relative_feed_value`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the RFV evaluation of the sample.</dd>
+  </dl>
+
+</details>
 
 ## NRC 2001 energy
 
-Field [`digestible_energy, 1X, Mcal/Lb`]()
+<details>
+  
+  <summary>Click to expand</summary>
 
-Field [`metabolizable_energy, 1X, Mcal/Lb`]()
+  ### Field [`digestible_energy, 1X, Mcal/lb`]()
 
-Field [`net_energy_lactation, 3X, Mcal/Lb`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the digestible energy of the sample in Mcal/lb.</dd>
+  </dl>
 
-Field [`net_energy_maintenance, 3X, Mcal/Lb`]()
+  ### Field [`metabolizable_energy, 1X, Mcal/lb`]()
 
-Field [`net_energy_gain, 3X, Mcal/Lb`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the metabolized energy of the sample in Mcal/lb.</dd>
+  </dl>
 
-Field [`digestible_energy, 1X, Mcal/Kg`]()
+  ### Field [`net_energy_lactation, 3X, Mcal/lb`]()
 
-Field [`metabolizable_energy, 1X, Mcal/Kg`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the net energy of lactation of the sample in Mcal/lb.</dd>
+  </dl>
 
-Field [`net_energy_lactation, 3X, Mcal/Kg`]()
+  ### Field [`net_energy_maintenance, 3X, Mcal/lb`]()
 
-Field [`net_energy_maintenance, 3X, Mcal/Kg`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the net energy of maintenance of the sample in Mcal/lb.</dd>
+  </dl>
 
-Field [`net_energy_gain, 3X, Mcal/Kg`]()
+  ### Field [`net_energy_gain, 3X, Mcal/lb`]()
 
-Field [`TDN1X`]()
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the net energy gain of the sample in Mcal/lb.</dd>
+  </dl>
+
+  ### Field [`digestible_energy, 1X, Mcal/kg`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the digestible energy of the sample in Mcal/kg.</dd>
+  </dl>
+
+  ### Field [`metabolizable_energy, 1X, Mcal/kg`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the metabolized energy of the sample in Mcal/kg.</dd>
+  </dl>
+
+  ### Field [`net_energy_lactation, 3X, Mcal/kg`]()
+
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the net energy of lactation of the sample in Mcal/kg.</dd>
+  </dl>
+
+  ### Field [`net_energy_maintenance, 3X, Mcal/kg`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the net energy of maintenance of the sample in Mcal/kg.</dd>
+  </dl>
+
+  ### Field [`net_energy_gain, 3X, Mcal/kg`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the net energy gain of the sample in Mcal/kg.</dd>
+  </dl>
+
+  ### Field [`TDN1X`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the Total Digestible Nutrients (TDN) at 1X maintenance.</dd>
+  </dl>
+  
+</details>
 
 ## Protein and protein fractions
 
-Field [`crude_protein`]()
+<details>
+  
+  <summary>Click to expand</summary>
 
-Field [`available_protein`]()
+  ### Field [`crude_protein`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the crude protein content of the sample in percentage terms, on a dry-matter basis.</dd>
+  </dl>
 
-Field [`acid_detergent_insoluble_crude_protein`]()
+  ### Field [`available_protein`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the available protein content of the sample in percentage terms, on a dry-matter basis.</dd>
+  </dl>
 
-Field [`adjusted_crude_protein`]()
+  ### Field [`acid_detergent_insoluble_crude_protein`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the acid detergent insoluble crude protein content of the sample in percentage terms.</dd>
+  </dl>
 
-Field [`soluble_protein_%_cp`]()
+  ### Field [`adjusted_crude_protein`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the adjusted crude protein content of the sample in percentage terms.</dd>
+  </dl>
 
-Field [`degradable_protein_%_cp`]()
+  ### Field [`soluble_protein_%_cp`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the soluble crude protein content of the sample in percentage terms.</dd>
+  </dl>
 
-Field [`neutral_detergent_insoluble_crude_protein`]()
+  ### Field [`degradable_protein_%_cp`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the degadable crude protein content of the sample in percentage terms.</dd>
+  </dl>
+
+  ### Field [`neutral_detergent_insoluble_crude_protein`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd>float</dd>
+    <dt>Valid values</dt>
+    <dd>A value corresponding to the neutral detergent insoluble crude protein content of the sample in percentage terms.</dd>
+  </dl>
+  
+</details>
 
 ## Amino acids
 
-Field [`lysine`]()
+### Field [`lysine`]()
 
-Field [`methionine`]()
+### Field [`methionine`]()
 
 ## Carbohydrates
 
-Field [`acid_detergent_fiber`]()
+### Field [`acid_detergent_fiber`]()
 
-Field [`neutral_detergent_fiber`]()
+### Field [`neutral_detergent_fiber`]()
 
-Field [`lignin`]()
+### Field [`lignin`]()
 
-Field [`non-fiber_carbohydrates`]()
+### Field [`non-fiber_carbohydrates`]()
 
-Field [`starch`]()
+### Field [`starch`]()
 
-Field [`water_soluble_carbohydrates`]()
+### Field [`water_soluble_carbohydrates`]()
 
-Field [`ethanol_soluble_carbohydrates`]()
+### Field [`ethanol_soluble_carbohydrates`]()
 
-Field [`in_vitro_true_digestibility_30hr, % of DM`]()
+### Field [`in_vitro_true_digestibility_30hr, % of DM`]()
 
-Field [`neutral_detergent_fiber_digestibility_30hr, % of NDF`]()
+### Field [`neutral_detergent_fiber_digestibility_30hr, % of NDF`]()
 
 ## Fat
 
-Field [`crude_fat`]()
+### Field [`crude_fat`]()
 
-Field [`total_fatty_acids`]()
+### Field [`total_fatty_acids`]()
 
-Field [`rumen_unsaturated_fatty_acid_load`]()
+### Field [`rumen_unsaturated_fatty_acid_load`]()
 
 ## Energy and digestibility
 
-Field [`total_digestible_nutrients`]()
+### Field [`total_digestible_nutrients`]()
 
-Field [`net_energy_lactation, Mcal/Lb`]()
+### Field [`net_energy_lactation, Mcal/Lb`]()
 
-Field [`net_energy_maintenance, Mcal/Lb`]()
+### Field [`net_energy_maintenance, Mcal/Lb`]()
 
-Field [`net_energy_gain, Mcal/Lb`]()
+### Field [`net_energy_gain, Mcal/Lb`]()
 
-Field [`kd, %/hr`]()
+### Field [`kd, %/hr`]()
 
-Field [`horse_digestible_energy, Mcal/Lb`]()
+### Field [`horse_digestible_energy, Mcal/Lb`]()
 
 ## Minerals
 
