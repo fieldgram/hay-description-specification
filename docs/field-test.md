@@ -307,74 +307,328 @@ nav_order: 4
 
 ## Amino acids
 
-### Field [`lysine`]()
+<details>
+  
+  <summary>Click to expand</summary>
 
-### Field [`methionine`]()
+  ### Field [`lysine`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+
+  ### Field [`methionine`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+  
+</details>
 
 ## Carbohydrates
 
-### Field [`acid_detergent_fiber`]()
+<details>
+  
+  <summary>Click to expannd</summary>
 
-### Field [`neutral_detergent_fiber`]()
+  ### Field [`acid_detergent_fiber`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`lignin`]()
+  ### Field [`neutral_detergent_fiber`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`non-fiber_carbohydrates`]()
+  ### Field [`lignin`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`starch`]()
+  ### Field [`non-fiber_carbohydrates`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`water_soluble_carbohydrates`]()
+  ### Field [`starch`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`ethanol_soluble_carbohydrates`]()
+  ### Field [`water_soluble_carbohydrates`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`in_vitro_true_digestibility_30hr, % of DM`]()
+  ### Field [`ethanol_soluble_carbohydrates`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`neutral_detergent_fiber_digestibility_30hr, % of NDF`]()
+  ### Field [`in_vitro_true_digestibility_30hr, % of DM`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+
+  ### Field [`neutral_detergent_fiber_digestibility_30hr, % of NDF`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+  
+</details>
 
 ## Fat
 
-### Field [`crude_fat`]()
+<details>
+  
+  <summary>Click to expand</summary>
 
-### Field [`total_fatty_acids`]()
+  ### Field [`crude_fat`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`rumen_unsaturated_fatty_acid_load`]()
+  ### Field [`total_fatty_acids`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+
+  ### Field [`rumen_unsaturated_fatty_acid_load`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+  
+</details>
 
 ## Energy and digestibility
 
-### Field [`total_digestible_nutrients`]()
+<details>
+  
+  <summary>Click to expand</summary>
 
-### Field [`net_energy_lactation, Mcal/Lb`]()
+  ### Field [`total_digestible_nutrients`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`net_energy_maintenance, Mcal/Lb`]()
+  ### Field [`net_energy_lactation, Mcal/Lb`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`net_energy_gain, Mcal/Lb`]()
+  ### Field [`net_energy_maintenance, Mcal/Lb`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`kd, %/hr`]()
+  ### Field [`net_energy_gain, Mcal/Lb`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-### Field [`horse_digestible_energy, Mcal/Lb`]()
+  ### Field [`kd, %/hr`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+
+  ### Field [`horse_digestible_energy, Mcal/Lb`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+  
+</details>
 
 ## Minerals
 
-Field [`ash`]()
+<details>
+  
+  <summary>Click to expand</summary>
 
-Field [`calcium`]()
+  ### Field [`ash`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`phosphorous`]()
+  ### Field [`calcium`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`magnesium`]()
+  ### Field [`phosphorous`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`potassium`]()
+  ### Field [`magnesium`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`sulfur`]()
+  ### Field [`potassium`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`chloride_ion`]()
+  ### Field [`sulfur`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`iron_PPM`]()
+  ### Field [`chloride_ion`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`zinc_PPM`]()
+  ### Field [`iron_PPM`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`copper_PPM`]()
+  ### Field [`zinc_PPM`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`manganese_PPM`]()
+  ### Field [`copper_PPM`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
 
-Field [`molybdenum_PPM`]()
+  ### Field [`manganese_PPM`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+
+  ### Field [`molybdenum_PPM`]()
+  
+  <dl>
+    <dt>Data type</dt>
+    <dd></dd>
+    <dt>Valid values</dt>
+    <dd></dd>
+  </dl>
+  
+</details>
