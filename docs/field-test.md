@@ -8,79 +8,80 @@ nav_order: 4
 ## Sample processing
 
 <details>
+  
   <summary>Click to expand</summary>
 
-  ### Field [`hay_tested`]()
+### Field [`hay_tested`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>enum</dd>
-    <dt>Valid values</dt>
-    <dd>= [ true | false | unknown ]</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
 
-  ### Field [`hay_sample_date`]()
+### Field [`hay_sample_date`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>datetime</dd>
-    <dt>Valid values</dt>
-    <dd>A date in YYYYMMDD format representing the sample date for this hay.</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid values</dt>
+  <dd>A date in YYYYMMDD format representing the sample date for this hay.</dd>
+</dl>
 
-  ### Field [`hay_sampler_independent`]()
+### Field [`hay_sampler_independent`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>enum</dd>
-    <dt>Valid values</dt>
-    <dd>= [ true | false | unknown ]</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
 
-  ### Field [`hay_sampler_certified`]()
+### Field [`hay_sampler_certified`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>enum</dd>
-    <dt>Valid values</dt>
-    <dd>= [ true | false | unknown ]</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
 
-  ### Field [`hay_sampling_protocol`]()
+### Field [`hay_sampling_protocol`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>enum</dd>
-    <dt>Valid values</dt>
-    <dd>= [ NFTA | other ]</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ NFTA | other ]</dd>
+</dl>
 
-  ### Field [`hay_testing_laboratory`]()
+### Field [`hay_testing_laboratory`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>enum</dd>
-    <dt>Valid values</dt>
-    <dd>An enumerated value corresponding to a specific laboratory from an open, freely-available database maintained by Fieldgram or another organization or, if self-tested, "Internal lab".</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>An enumerated value corresponding to a specific laboratory from an open, freely-available database maintained by Fieldgram or another organization or, if self-tested, "Internal lab".</dd>
+</dl>
 
-  ### Field [`hay_testing_method`]()
+### Field [`hay_testing_method`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>enum</dd>
-    <dt>Valid values</dt>
-    <dd>= [ Chemical analysis | Near Infrared Reflectance (NIR) spectroscopy | Both chemical analysis and NIR ]</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Chemical analysis | Near Infrared Reflectance (NIR) spectroscopy | Both chemical analysis and NIR ]</dd>
+</dl>
 
-  ### Field [`hay_testing_date`]()
+### Field [`hay_testing_date`]()
 
-  <dl>
-    <dt>Data type</dt>
-    <dd>datetime</dd>
-    <dt>Valid values</dt>
-    <dd>A date in YYYYMMDD format representing the testing date for this hay.</dd>
-  </dl>
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid values</dt>
+  <dd>A date in YYYYMMDD format representing the testing date for this hay.</dd>
+</dl>
   
 </details>
 
