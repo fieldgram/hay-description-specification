@@ -16,7 +16,14 @@ nav_order: 4
   <dd>= [ true | false | unknown ]</dd>
 </dl>
 
-Field [`hay_sample_date`]()
+### Field [`hay_sample_date`]()
+
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid value</dt>
+  <dd>A date in YYYYMMDD format representing the sample date for this hay.</dd>
+</dl>
 
 Field [`hay_sampler_independent`]()
 
