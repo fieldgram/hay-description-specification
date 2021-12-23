@@ -5,6 +5,10 @@ nav_order: 4
 ---
 # Forage analysis fields
 
+<details>
+  
+  <summary>Click to expand</summary>
+
 ## Sample processing
 
 <details>
@@ -336,7 +340,7 @@ nav_order: 4
 
 <details>
   
-  <summary>Click to expannd</summary>
+  <summary>Click to expand</summary>
 
   ### Field [`acid_detergent_fiber`]()
   
@@ -632,4 +636,6 @@ nav_order: 4
     <dd></dd>
   </dl>
   
+</details>
+
 </details>
