@@ -3,6 +3,361 @@ layout: default
 title: Field Test
 nav_order: 4
 ---
+# Hay description fields
+
+### Field [`hay_single_lot_traceble`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>boolean</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false ]</dd>
+</dl>
+
+<details>
+  <summary>More information</summary>
+  <p>Many producers of goods ranging from foods to medicines to industrial equipment employ the concept of a defined "lot" of a given product for quality control, assurance, and traceability purposes. We define "lot discipline" as the regular, commercial practice of identifying and segregating goods by defined lots.
+
+  The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (see citation for "Ball" in the reference section below), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.
+
+  This field may be implemented as a boolean data type, with "true" representing the seller's affirmation that hay he offers to the market is traceable to a single lot as defined. At some point in the future, should lot discipline become commonplace in the hay market, it may be sensible for this affirmation to be a default value of the product definition. In such case, sellers representing their hay in accordance with the standard description model would implicitly affirm that the hay they offer to the market is traceable by lot as such term is then defined.
+
+  Systems implementing this standard may generate lot identifiers automatically and then let users map their own identifiers to the system-generated ones. Presuming we validate that approach as useful, we will extend this definition by adding an optionally-repeating component block or comparable device to allow users to add one or more fields to hold these values. This would be useful, e.g., for linking test results to listings.</p>
+</details>
+  
+### Field [`intended_livestock_use`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Dairy | Beef | Horse | Goat | Sheep | Deer | Camel | Landscape ]</dd>
+</dl>
+
+### Field [`hay_mixed_sward`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>boolean</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false ]</dd>
+</dl>
+
+<details>
+  <summary>More information</summary>
+  <p>A "sward" is an "expanse of short grass." Growers may choose to produce "pure" (monoculture) or "mixed" (polyculture) swards of hay and consequently, pure or mixed forage. A pure sward contains hay of the same species, subspecies, or variety, e.g., the Tifton 85 cultivar of bermuda grass. A mixed sward contains two or more species, subspecies, or varieties, e.g., an alfalfa/timothy mix.
+
+  This field supports expression of the grower's intention and not necessarily the result. If implemented as a boolean data type as suggested, "true" expresses that the grower intended to produce mixed hay, while "false" expresses that the grower intended to produce pure hay.
+
+  The emphasis on intention rather than result accounts for the possibility of infiltration of a sward by unintended vegetation ("weeds"). This unintended vegetation may even serve as a forage crop itself. For example, bahia grass may deliberately be raised as hay, but when infiltrating an otherwise pure sward of coastal bermuda grass, bahia grass acts as a weed. And, in some markets, all bermuda grass hays are treated as noxious weeds.
+
+  If a grower intends to produce a pure crop but what results is a crop with significant weeds, this field should still take a value of "false," as the grower intended a pure sward. Similarly, if the grower intends to produce a mixed crop but only one variety survives to harvest, this field should still take a value of "true." We use the [`variety_representation_target`]() and [`variety_representation_result`]() fields, respectively, part of a conditionally-repeating group of fields, to account for differences between intentions and results.</p>
+</details>
+
+### Field [`hay_variety_instances`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>A positive integer representing the quantity of hay varieties purposefully grown in the sward. A pure sward always takes a value of "1." A mixed sward must take a value of "2" or more.</dd>
+</dl>
+
+<details>
+  <summary>More information</summary>
+  <p>This field serves both marketing and technological purposes. From a marketing perspective, it allows the farmer to express how many varieties of hay he has meant to include in his bales. Technologically, it reports how many instances of the following [`hay_variety_component_block`]() a message or database table will contain.
+
+  Arguably, the presence of this field makes the preceding, [`hay_mixed_sward`]() field superfluous. Implicitly, a value of "1" for this field means "pure sward," whereas a value greater than "1" means "mixed sward." We include both fields for the time being, principally to emphasize the importance of disclosing whether hay is pure or mixed and to help draw a distinction between what the grower intends and what actually results. We concede that this field alone may suffice and that the product definition may be improved through future removal of the [`hay_mixed_sward`]() field.
+
+  Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.</p>
+</details>
+
+### Placeholder for Conditionally-repeating block
+
+## Hay origin
+
+### Field [`hay_origin_country`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>A two-character string from the ISO 3166-1 alpha-2 code list, representing the applicable, two-letter code for country of origin.</dd>
+</dl>
+
+### Field [`hay_origin_subdivision`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>A string of up to three alphanumeric characters from the ISO 3166-2 list of country subdivision codes, representing states, dependent territories, administrative divisions, or other subdivisions of various countries.</dd>
+</dl>
+
+### Field [`hay_origin_county`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>A string identifying the county, parish, or other political subdivision of origin, immediately following in jurisdictional rank the subdivision from the ISO 3166-2 list.</dd>
+</dl>
+
+<p>Important especially in the U.S. for epidemiological and agricultural extension services purposes.</p>
+
+### Field [`hay_origin_postal`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>An alphanumeric string representing the postal code of origin, if such code exists, is known, and the seller is willing to disclose this information. If hay originates in a country lacking a postal-code system, enter "None." If hay originates in a country with a postal-code system but the seller does not know the code, enter "Unknown." If the seller knows but is unwilling to disclose the postal code, enter "Withheld."</dd>
+</dl>
+
+<p>Systems implementing this standard may be able to populate this field automatically for the user, using street address for example. In the U.S., about ten percent of postal codes cross jurisdictional (town, county, or state) boundaries, so implementers should exercise caution in inferring other location information from such codes.</p>
+
+### Field [`source_field_elevation`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the magnitude of the average elevation of the source field(s) for this hay in relation to sea level, rounded to the nearest whole number, whether in meters or feet. Use the field [`source_field_elevation_units`]() to specify the unit of measure for this magnitude.</dd>
+</dl>
+
+<p> The elevation of a field determines in part the temperatures and other weather conditions under which forage is grown and which weeds and pests are likely to require management.</p>
+
+### Field [`source_field_elevation_units`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ feet | meters ]</dd>
+</dl>
+
+### Field [`source_field_climate_class`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>The three-character, Köppen climate classification for the source field(s) for this hay. If the source fields are too distant from one another to fall under a single climate class, enter "var" for "various."</dd>
+</dl>
+
+<details>
+  <summary>More information</summary>
+  <p>While we often think of climate as an atmospheric phenomenon, climate classification actually reflects what kind of vegetation naturally prevails in a certain area. The Köppen classification system is well-established and readily accessible. In future versions of the product definition, it may be prudent to allow users to choose from several classification schemes or else to use another by default.
+
+  Systems implementing this standard may populate this field with values sourced automatically from other databases, based upon location information the user supplies.</p>
+</details>
+
+### Field [`source_field_area`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the magnitude of the area of the source field(s) for this hay, rounded to the nearest whole number, whether in hectares or acres.  Use "0" if unknown. Use the field [`source_field_area_units`]() to specify the unit of measure for this magnitude.</dd>
+</dl>
+
+The variability of hay from one bale to the next depends on a variety of factors, including soil conditions, weather, weeds, and pests. As a rule, the larger the area of the source field (or fields) for a forage, the greater will be the variability in quality and anti-quality factors for that forage.
+
+### Field [`source_field_area_units`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd> = [ hectares | acres ]</dd>
+</dl>
+
+### Field [`irrigation_method_available`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ none | flood | sprinkler | pivot | drip ]</dd>
+</dl>
+
+### Field [`irrigation_method_used`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ none | flood | sprinkler | pivot | drip ]</dd>
+</dl>
+
+### Field [`source_stand_age`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the age in years of the stand(s) from which this hay is harvested, rounded up to the nearest year. Use "0" if unknown or the hay was harvested from stands of different ages.</dd>
+</dl>
+
+## Fertilization
+
+### Field [`last_fertilized_nitrogen`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid values</dt>
+  <dd>A date in YYYYMMDD format representing the last date of nitrogen fertilization for this hay, or "00000000" if not nitrogen-fertilized.</dd>
+</dl>
+
+### Field [`last_fertilized_potassium`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid values</dt>
+  <dd>A date in YYYYMMDD format representing the last date of potassium fertilization for this hay, or "00000000" if not potassium-fertilized.</dd>
+</dl>
+
+### Field [`last_fertilized_phosphorus`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid values</dt>
+  <dd>A date in YYYYMMDD format representing the last date of phosphorus fertilization for this hay, or "00000000" if not phosphorus-fertilized.</dd>
+</dl>
+
+### Field [`amount_fertilized_nitrogen`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last nitrogen application for this hay, or "0" if not nitrogen-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+</dl>
+
+### Field [`amount_fertilized_nitrogen`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last nitrogen application for this hay, or "0" if not nitrogen-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+</dl>
+
+### Field [`amount_fertilized_potassium`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last potassium application for this hay, or "0" if not potassium-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+</dl>
+
+### Field [`amount_fertilized_phosphorus`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last phosphorus application for this hay, or "0" if not phosphorus-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+</dl>
+
+### Field [`amount_fertilized_units`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ kilograms per hectare | pounds per acre ]</dd>
+</dl>
+
+## Certification
+
+### Field [`hay_certified_organic`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`hay_certified_weed_free`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+## Hay treatment
+
+### Field [`hay_conditioned`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`hay_herbicide_treated`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`hay_preservative_applied`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`hay_coloring_agent_used`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+## Harvesting
+
+### Field [`harvest_date_start`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid values</dt>
+  <dd>A date in YYYYMMDD format representing the commencement date of the harvest for this hay.</dd>
+</dl>
+
+<details>
+  <summary>More information</summary>
+  <p>Mowing is generally the first step in harvesting hay and thus represents the commencement of a specific harvest. Identifying the harvest start date informs the consumer as to the age of the hay and season of the harvest. This information may also be useful in ascertaining local weather conditions for the harvest.
+
+  This note applies both to this field and to the [`harvest_date_end`]() field. The seller may lack specific knowledge of harvest start and end dates and only be able to estimate these dates. A protocol for using estimated dates is feasible through the use of double-zero values for day of month or even month of year. A double zero in the day field would mean that the seller is confident as to the month of the applicable harvest date but not the day. Double zeroes in both the day and month places would mean the seller is confident of the year of harvest but neither the month nor day.</p>
+</details>
+  
+### Field [`harvest_date_end`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>datetime</dd>
+  <dt>Valid values</dt>
+  <dd>A date in YYYYMMDD format representing the conclusion date for the harvest for this hay. This date value may be same as, but not prior to, that for [`harvest_date_start'](). May not be more than two days after [`harvest_date_start`](), according to current, working definition of lot, if single-lot-traceability is claimed.</dd>
+</dl>
+
+<p>Systems implementing this standard should evaluate the difference in days between [`harvest_date_start`]() and [`harvest_date_end`]() and compare the result with the value provided for [`hay_single_lot`](). If [`hay_single_lot`]() is true, then the difference in days must be two or fewer.</p>
+
+### Field [`hay_cutting`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing which cutting of the harvest season produced this hay, i.e., "1" for first cut, "2" for second cut, "12" for twelfth cut, and so forth. If unknown, enter "0" (zero).</dd>
+</dl>
+
+### Field [`source_field_yield`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the magnitude of the yield from the source field(s) for this hay, rounded to the nearest whole number, whether in metric, long, or short tons. Use the [`field source_field_yield_units`]() to specify the unit of measure for this magnitude.</dd>
+</dl>
+
+<p>For purposes of this field, we define "yield" as the product of (a) number of bales and (b) average bale weight.</p>
+
+### Field [`source_field_yield_units`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ metric tons | British (long) tons | U.S. (short) tons ]</dd>
+</dl>
+
+## Weather
+
+
+
 # Forage analysis fields
 
 <details>
@@ -16,7 +371,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
 ### Field [`hay_tested`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -25,7 +379,6 @@ nav_order: 4
 </dl>
 
 ### Field [`hay_sample_date`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>datetime</dd>
@@ -34,7 +387,6 @@ nav_order: 4
 </dl>
 
 ### Field [`hay_sampler_independent`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -43,7 +395,6 @@ nav_order: 4
 </dl>
 
 ### Field [`hay_sampler_certified`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -52,7 +403,6 @@ nav_order: 4
 </dl>
 
 ### Field [`hay_sampling_protocol`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -61,7 +411,6 @@ nav_order: 4
 </dl>
 
 ### Field [`hay_testing_laboratory`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -70,7 +419,6 @@ nav_order: 4
 </dl>
 
 ### Field [`hay_testing_method`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -79,7 +427,6 @@ nav_order: 4
 </dl>
 
 ### Field [`hay_testing_date`]()
-
 <dl>
   <dt>Data type</dt>
   <dd>datetime</dd>
@@ -96,7 +443,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`moisture_content`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -105,7 +451,6 @@ nav_order: 4
   </dl>
 
   ### Field [`dry_matter`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -122,7 +467,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`relative_feed_value`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -139,7 +483,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`digestible_energy, 1X, Mcal/lb`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -148,7 +491,6 @@ nav_order: 4
   </dl>
 
   ### Field [`metabolizable_energy, 1X, Mcal/lb`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -157,7 +499,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_lactation, 3X, Mcal/lb`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -166,7 +507,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_maintenance, 3X, Mcal/lb`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -175,7 +515,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_gain, 3X, Mcal/lb`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -184,7 +523,6 @@ nav_order: 4
   </dl>
 
   ### Field [`digestible_energy, 1X, Mcal/kg`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -193,7 +531,6 @@ nav_order: 4
   </dl>
 
   ### Field [`metabolizable_energy, 1X, Mcal/kg`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -202,7 +539,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_lactation, 3X, Mcal/kg`]()
-
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -211,7 +547,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_maintenance, 3X, Mcal/kg`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -220,7 +555,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_gain, 3X, Mcal/kg`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -229,7 +563,6 @@ nav_order: 4
   </dl>
 
   ### Field [`TDN1X`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -246,7 +579,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`crude_protein`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -255,7 +587,6 @@ nav_order: 4
   </dl>
 
   ### Field [`available_protein`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -264,7 +595,6 @@ nav_order: 4
   </dl>
 
   ### Field [`acid_detergent_insoluble_crude_protein`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -273,7 +603,6 @@ nav_order: 4
   </dl>
 
   ### Field [`adjusted_crude_protein`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -282,7 +611,6 @@ nav_order: 4
   </dl>
 
   ### Field [`soluble_protein_%_cp`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -291,7 +619,6 @@ nav_order: 4
   </dl>
 
   ### Field [`degradable_protein_%_cp`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -300,7 +627,6 @@ nav_order: 4
   </dl>
 
   ### Field [`neutral_detergent_insoluble_crude_protein`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd>float</dd>
@@ -317,7 +643,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`lysine`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -326,7 +651,6 @@ nav_order: 4
   </dl>
 
   ### Field [`methionine`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -343,7 +667,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`acid_detergent_fiber`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -352,7 +675,6 @@ nav_order: 4
   </dl>
 
   ### Field [`neutral_detergent_fiber`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -361,7 +683,6 @@ nav_order: 4
   </dl>
 
   ### Field [`lignin`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -370,7 +691,6 @@ nav_order: 4
   </dl>
 
   ### Field [`non-fiber_carbohydrates`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -379,7 +699,6 @@ nav_order: 4
   </dl>
 
   ### Field [`starch`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -388,7 +707,6 @@ nav_order: 4
   </dl>
 
   ### Field [`water_soluble_carbohydrates`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -397,7 +715,6 @@ nav_order: 4
   </dl>
 
   ### Field [`ethanol_soluble_carbohydrates`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -406,7 +723,6 @@ nav_order: 4
   </dl>
 
   ### Field [`in_vitro_true_digestibility_30hr, % of DM`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -415,7 +731,6 @@ nav_order: 4
   </dl>
 
   ### Field [`neutral_detergent_fiber_digestibility_30hr, % of NDF`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -432,7 +747,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`crude_fat`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -441,7 +755,6 @@ nav_order: 4
   </dl>
 
   ### Field [`total_fatty_acids`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -450,7 +763,6 @@ nav_order: 4
   </dl>
 
   ### Field [`rumen_unsaturated_fatty_acid_load`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -467,7 +779,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`total_digestible_nutrients`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -476,7 +787,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_lactation, Mcal/Lb`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -485,7 +795,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_maintenance, Mcal/Lb`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -494,7 +803,6 @@ nav_order: 4
   </dl>
 
   ### Field [`net_energy_gain, Mcal/Lb`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -503,7 +811,6 @@ nav_order: 4
   </dl>
 
   ### Field [`kd, %/hr`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -512,7 +819,6 @@ nav_order: 4
   </dl>
 
   ### Field [`horse_digestible_energy, Mcal/Lb`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -529,7 +835,6 @@ nav_order: 4
   <summary>Click to expand</summary>
 
   ### Field [`ash`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -538,7 +843,6 @@ nav_order: 4
   </dl>
 
   ### Field [`calcium`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -547,7 +851,6 @@ nav_order: 4
   </dl>
 
   ### Field [`phosphorous`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -556,7 +859,6 @@ nav_order: 4
   </dl>
 
   ### Field [`magnesium`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -565,7 +867,6 @@ nav_order: 4
   </dl>
 
   ### Field [`potassium`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -574,7 +875,6 @@ nav_order: 4
   </dl>
 
   ### Field [`sulfur`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -583,7 +883,6 @@ nav_order: 4
   </dl>
 
   ### Field [`chloride_ion`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -592,7 +891,6 @@ nav_order: 4
   </dl>
 
   ### Field [`iron_PPM`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -601,7 +899,6 @@ nav_order: 4
   </dl>
 
   ### Field [`zinc_PPM`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -610,7 +907,6 @@ nav_order: 4
   </dl>
 
   ### Field [`copper_PPM`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -619,7 +915,6 @@ nav_order: 4
   </dl>
 
   ### Field [`manganese_PPM`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
@@ -628,7 +923,6 @@ nav_order: 4
   </dl>
 
   ### Field [`molybdenum_PPM`]()
-  
   <dl>
     <dt>Data type</dt>
     <dd></dd>
