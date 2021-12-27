@@ -354,9 +354,349 @@ The variability of hay from one bale to the next depends on a variety of factors
   <dd>= [ metric tons | British (long) tons | U.S. (short) tons ]</dd>
 </dl>
 
-## Weather
+## Weather damage
+
+### Field [`weather_damage_windrow_rain`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received rainfall in the windrow, "false" the seller's affirmation that no rain fell on the windrow, and "unknown" the seller's disclosure that he has no knowledge of whether the windrow for this hay received rainfall.</p>
+
+### Field [`weather_damage_windrow_snow`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received snow in the windrow, "false" the seller's affirmation that no snow fell on the windrow, and "unknown" the seller's disclosure that he has no knowledge of whether the windrow for this hay received snowfall.</p>
+
+### Field [`weather_damage_windrow_sleet`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received sleet in the windrow, "false" the seller's affirmation that no sleet fell on the windrow, and "unknown" the seller's disclosure that he has no knowledge of whether the windrow for this hay received sleet.</p>
+
+### Field [`weather_damage_windrow_hail`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received hail in the windrow, "false" the seller's affirmation that no hail fell on the windrow, and "unknown" the seller's disclosure that he has no knowledge of whether the windrow for this hay received hail.</p>
+
+### Field [`weather_damage_windrow_fog`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay experienced fog in the windrow, "false" the seller's affirmation that no fog weighed on the windrow, and "unknown" the seller's disclosure that he has no knowledge of whether the windrow for this hay experienced fog.</p>
+
+### Field [`weather_damage_windrow_fog`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay experienced heavy dewfall in the windrow, "false" the seller's affirmation that the windrow escaped heavy dewfall, and "unknown" the seller's disclosure that he has no knowledge of whether the windrow for this hay experienced heavy dewfall.</p>
+
+### Field [`weather_damage_windrow_fog`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ none | minor | modest | substantial | unknown ]</dd>
+</dl>
+
+<p>This field allows the seller to disclose his assessment of weather damage to the hay while in the windrow.</p>
+
+### Field [`weather_damage_baled_rain`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received rainfall once baled, "false" the seller's affirmation that no rain fell on the bales, and "unknown" the seller's disclosure that he has no knowledge of whether the bales received rainfall.</p>
+
+### Field [`weather_damage_baled_snow`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received snow once baled, "false" the seller's affirmation that no snow fell on the bales, and "unknown" the seller's disclosure that he has no knowledge of whether the bales received snowfall.</p>
+
+### Field [`weather_damage_baled_sleet`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received sleet once baled, "false" the seller's affirmation that no sleet fell on the bales, and "unknown" the seller's disclosure that he has no knowledge of whether the bales received sleet.</p>
+
+### Field [`weather_damage_baled_hail`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay received hail once baled, "false" the seller's affirmation that no hail fell on the bales, and "unknown" the seller's disclosure that he has no knowledge of whether the bales received hail.</p>
+
+### Field [`weather_damage_baled_moisture`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+<p>This field may be implemented as an enumerated data type, with "true" representing the seller's disclosure that this hay experienced fog, heavy dewfall, or another source of excessive moisture once baled, "false" the seller's affirmation that no such phenomena affected the bales, and "unknown" the seller's disclosure that he has no knowledge of whether fog, heavy dewfall, or any other source of excessive moisture affected the bales.</p>
+
+### Field [`weather_damage_baled_assessment`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ None | Minor | Modest | Substantial | Unknown ]</dd>
+</dl>
+
+<p>This field allows the seller to disclose his assessment of weather damage to the hay once baled.</p>
+
+## Hay packaging
+
+### Field [`hay_packaging_history`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Bales made in field | Re-baled from other hay bales | Cut from larger hay bales ]</dd>
+</dl>
+
+### Field [`bale_binding`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Twine, two-tie | Twine, three-tie | Twine, four-tie | Twine, five-tie | Twine, six-tie | Wire, two-tie | Wire, three-tie | Fabric band, two-tie | Fabric band, three-tie | Plastic band, two-tie | Plastic band, three-tie | Metal band, two-tie | Metal band, three-tie | Netwrap | John Deere CoverEdge ]</dd>
+</dl>
+
+<p>Systems implementing this standard may benefit from validation of these values against the value provided for the [`field bale_shape`](). The "Netwrap" and "John Deere CoverEdge" binding types apply only to round bales.</p>
+
+### Field [`hay_compression`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ uncompressed | 2:1 ]</dd>
+</dl>
 
 
+<p>Hay may be mechanically compressed to increase density for transport purposes. This practice is commonplace for export purposes. We are not aware of any compression schemes other than "double compression" at present, so in theory a boolean data type would suffice for this field, but we have cast it as type "enum" to allow for the introduction of other compression ratios in the future.</p>
+
+### Field [`bale_weight_intended`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A positive integer representing the magnitude of the intended bale weight, rounded to the nearest applicable unit, as determined in the baler.</dd>
+</dl>
+
+<details>
+  <summary>More information</summary>
+  <p>Express bale weights, whether intended or as assessed, as an average across all bales offered for sale under this product definition. If lack of uniformity would make such an expression misleading, indicate as such using the value "Grower estimate--disparate bales" in the field [`bale_weight_assessment_method`]().
+
+  Systems implementing this standard may wish to validate this field for numerical input and reasonable magnitudes.</p>
+</details>
+
+### Field [`bale_weight_units`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ kilograms | pounds ]</dd>
+</dl>
+
+### Field [`bale_weight_assessment`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A positive integer representing the magnitude of the assessed bale weight, rounded to the nearest applicable unit, as determined by the seller.</dd>
+</dl>
+
+<p>Systems implementing this standard may wish to validate this field for numerical input and reasonable magnitudes.</p>
+
+### Field [`bale_weight_assessment_method`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Truckload average | Explicit weight | Baler target | Grower estimate--uniform bales | Grower estimate--disparate bales ]</dd>
+</dl>
+
+### Field [`bale_shape`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ rectangular | round ]</dd>
+</dl>
+
+### Field [`bale_dimension_width`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A positive integer value representing the magnitude of the intended bale width, rounded to the nearest applicable unit, as determined in the baler. Applicable to square bales only.</dd>
+</dl>
+
+<p>Systems implementing this standard may wish to validate this field for numerical input, reasonable magnitudes, and bale shape.</p>
+
+### Field [`bale_dimension_height`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A positive integer value representing the magnitude of the intended bale height, rounded to the nearest applicable unit, as determined in the baler. Applicable to square bales only.</dd>
+</dl>
+
+<p>Systems implementing this standard may wish to validate this field for numerical input, reasonable magnitudes, and bale shape.</p>
+
+### Field [`bale_dimension_length`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A positive integer value representing the magnitude of the intended bale length, rounded to the nearest applicable unit, as determined in the baler. Applicable to square or round bales.</dd>
+</dl>
+
+<p>Systems implementing this standard may wish to validate this field for numerical input and reasonable magnitudes.</p>
+
+### Field [`bale_dimension_diameter`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A positive integer value representing the magnitude of the intended bale diameter, rounded to the nearest applicable unit, as determined in the baler. Applicable to round bales only.</dd>
+</dl>
+
+<p>Systems implementing this standard may wish to validate this field for numerical input, reasonable magnitudes, and bale shape.</p>
+
+### Field [`bale_dimension_units`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ centimeters | inches ]</dd>
+</dl>
+
+### Field [`hay_leafiness`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Very leafy | Leafy | Slightly stemmy | Stemmy ]</dd>
+</dl>
+
+<p>Classification scheme sourced from page 6 of Bates (2018).</p>
+
+### Field [`organoleptic_factor_odor`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Clean--"crop smell" | Dusty | Moldy | Somewhat sour | Sour | Rotten or otherwise foul ]</dd>
+</dl>
+
+<p>Classification scheme adapted from page 6 of Bates (2018).</p>
+
+### Field [`organoleptic_factor_moldy`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`organoleptic_factor_dusty`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`organoleptic_factor_rot`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`foreign_material_weeds`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`foreign_material_burs`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`foreign_material_insects`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ true | false | unknown ]</dd>
+</dl>
+
+### Field [`hay_location_country`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>A two-character string from the ISO 3166-1 alpha-2 code list, representing the applicable, two-letter code for the country where the hay is located.</dd>
+</dl>
+
+### Field [`hay_location_subdivision`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>A string of up to three alphanumeric characters from the ISO 3166-2 list of country subdivision codes, representing the state, dependent territory, administrative division, or other subdivision where the hay is located.</dd>
+</dl>
 
 # Forage analysis fields
 
