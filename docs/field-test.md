@@ -698,6 +698,62 @@ The variability of hay from one bale to the next depends on a variety of factors
   <dd>A string of up to three alphanumeric characters from the ISO 3166-2 list of country subdivision codes, representing the state, dependent territory, administrative division, or other subdivision where the hay is located.</dd>
 </dl>
 
+### Field [`hay_location_county`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>A string identifying the county, parish, or other political subdivision, immediately following in jurisdictional rank the subdivision from the ISO 3166-2 list, where the hay is located.</dd>
+</dl>
+
+<p>Important especially in the U.S. for epidemiological and agricultural extension services purposes.</p>
+
+### Field [`hay_location_postal`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>string</dd>
+  <dt>Valid values</dt>
+  <dd>An alphanumeric string representing the postal code for the hay's location, if such code exists, is known, and the seller is willing to disclose this information. If hay is located in a country lacking a postal-code system, enter "None." If hay is located in a country with a postal-code system but the seller does not know the code, enter "Unknown." If the seller knows but is unwilling to disclose the postal code, enter "Withheld."</dd>
+</dl>
+
+<p>The location-related fields allow for the possibility that hay may be stored for shipping at some distance from its origin. Location rather than origin should drive shipping-cost analytics.
+
+  Designers of graphical interfaces may wish to allow users to copy origin to location fields easily, e.g., through ticking a checkbox.</p>
+  
+## Hay storage
+
+### Field [`storage_days_fully_exposed`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>A integer value representing how many days this hay has been fully exposed to the elements after baling, whether in the field or otherwise.</dd>
+</dl>
+
+### Field [`storage_days_partially_sheltered`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>A integer value representing how many days this hay has been only partially sheltered from the elements after baling, whether in the field or otherwise.</dd>
+</dl>
+
+### Field [`storage_days_fully_sheltered`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer value representing how many days this hay has been fully sheltered from the elements after baling, whether in the field or otherwise.</dd>
+</dl>
+
+### Field [`storage_bottom_bales`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Ground | Pallets | Wood | Concrete | Other ]</dd>
+</dl>
+
 # Forage analysis fields
 
 <details>
