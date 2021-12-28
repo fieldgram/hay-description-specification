@@ -42,15 +42,13 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
-  <p>
-    A "sward" is an "expanse of short grass." Growers may choose to produce "pure" (monoculture) or "mixed" (polyculture) swards of hay and consequently, pure or mixed forage. A pure sward contains hay of the same species, subspecies, or variety, e.g., the Tifton 85 cultivar of bermuda grass. A mixed sward contains two or more species, subspecies, or varieties, e.g., an alfalfa/timothy mix.
+  <p>A "sward" is an "expanse of short grass." Growers may choose to produce "pure" (monoculture) or "mixed" (polyculture) swards of hay and consequently, pure or mixed forage. A pure sward contains hay of the same species, subspecies, or variety, e.g., the Tifton 85 cultivar of bermuda grass. A mixed sward contains two or more species, subspecies, or varieties, e.g., an alfalfa/timothy mix.</p>
 
-    This field supports expression of the grower's intention and not necessarily the result. If implemented as a boolean data type as suggested, "true" expresses that the grower intended to produce mixed hay, while "false" expresses that the grower intended to produce pure hay.
+  <p>This field supports expression of the grower's intention and not necessarily the result. If implemented as a boolean data type as suggested, "true" expresses that the grower intended to produce mixed hay, while "false" expresses that the grower intended to produce pure hay.</p>
 
-    The emphasis on intention rather than result accounts for the possibility of infiltration of a sward by unintended vegetation ("weeds"). This unintended vegetation may even serve as a forage crop itself. For example, bahia grass may deliberately be raised as hay, but when infiltrating an otherwise pure sward of coastal bermuda grass, bahia grass acts as a weed. And, in some markets, all bermuda grass hays are treated as noxious weeds.
+  <p>The emphasis on intention rather than result accounts for the possibility of infiltration of a sward by unintended vegetation ("weeds"). This unintended vegetation may even serve as a forage crop itself. For example, bahia grass may deliberately be raised as hay, but when infiltrating an otherwise pure sward of coastal bermuda grass, bahia grass acts as a weed. And, in some markets, all bermuda grass hays are treated as noxious weeds.</p>
 
-    If a grower intends to produce a pure crop but what results is a crop with significant weeds, this field should still take a value of "false," as the grower intended a pure sward. Similarly, if the grower intends to produce a mixed crop but only one variety survives to harvest, this field should still take a value of "true." We use the [`variety_representation_target`]() and [`variety_representation_result`]() fields, respectively, part of a conditionally-repeating group of fields, to account for differences between intentions and results.
-  </p>
+  <p>If a grower intends to produce a pure crop but what results is a crop with significant weeds, this field should still take a value of "false," as the grower intended a pure sward. Similarly, if the grower intends to produce a mixed crop but only one variety survives to harvest, this field should still take a value of "true." We use the [`variety_representation_target`]() and [`variety_representation_result`]() fields, respectively, part of a conditionally-repeating group of fields, to account for differences between intentions and results.</p>
 </details>
 
 ### Field [`hay_variety_instances`]()
@@ -63,16 +61,69 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
-  <p>
-    This field serves both marketing and technological purposes. From a marketing perspective, it allows the farmer to express how many varieties of hay he has meant to include in his bales. Technologically, it reports how many instances of the following [`hay_variety_component_block`]() a message or database table will contain. 
   
-    Arguably, the presence of this field makes the preceding, [`hay_mixed_sward`]() field superfluous. Implicitly, a value of "1" for this field means "pure sward," whereas a value greater than "1" means "mixed sward." We include both fields for the time being, principally to emphasize the importance of disclosing whether hay is pure or mixed and to help draw a distinction between what the grower intends and what actually results. We concede that this field alone may suffice and that the product definition may be improved through future removal of the [`hay_mixed_sward`]() field.
+  <p>This field serves both marketing and technological purposes. From a marketing perspective, it allows the farmer to express how many varieties of hay he has meant to include in his bales. Technologically, it reports how many instances of the following [`hay_variety_component_block`]() a message or database table will contain.</p>
+  
+  <p>Arguably, the presence of this field makes the preceding, [`hay_mixed_sward`]() field superfluous. Implicitly, a value of "1" for this field means "pure sward," whereas a value greater than "1" means "mixed sward." We include both fields for the time being, principally to emphasize the importance of disclosing whether hay is pure or mixed and to help draw a distinction between what the grower intends and what actually results. We concede that this field alone may suffice and that the product definition may be improved through future removal of the [`hay_mixed_sward`]() field.</p>
 
-    Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.
-  </p>
+  <p>Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.</p>
 </details>
 
-### Placeholder for Conditionally-repeating block
+<p>
+  \=== BEGIN CONDITIONALLY-REPEATING COMPONENT BLOCK \===
+</p>
+
+## Conditionally-repeating block [`hay_variety_component_block`]().
+
+### Field [`hay_variety`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>An enumerated value corresponding to a specific hay species, subspecies, or variety, e.g., alfalfa, timothy, coastal bermuda grass, Tifton 85 bermuda grass, etc., from an open, freely-available database maintained by Fieldgram or another organization. Ideally this should include the binomial ("scientific") name, common name, and indication of genetic-modification status ("GMO" or "non-GMO").</dd>
+</dl>
+
+<p>Hay can be produced from thousands of plant varieties or, in the case of mixed hay, combinations of such varieties. This field is part of a component block that the seller may repeat as often as necessary in order to disclose all plant varieties included in the hay he is marketing. Hay the seller represents as pure hay will have one such variety, and thus only one instance of this field. Hay represented as mixed hay will have two or more varieties and a corresponding number of instances of this field. The seller should be as specific as possible in characterizing his hay. For example, if he knows his hay consists of either the Maverick, Vernal, or Archer varieties of alfalfa, he should use that level of precision rather than simply describing his hay as "alfalfa."</p>
+
+<p>Because of the large number of plant varieties from which hay may be produced, systems implementing this standard may benefit from the use of auto-completion functionality in user-interfaces controls. This may ease the variety-specification task for the seller.</p>
+
+### Field [`variety_representation_target`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>An integer representing the part of this hay for which this hay variety is intended to account, in relation to the whole. For a monoculture, enter "100" and do not repeat the component block. For mixed hays, the fractional contribution for each variety will be determined by dividing the target value entered for each by the sum of all the target values. For example, if three varieties are used and each is assigned a value of one, the sum will be three and the target contribution of each particular variety will be one divided by three, or one third.</dd>
+</dl>
+
+<p>In planning a hay crop, a grower may intend to produce either a pure or mixed forage. For example, the grower may intend a crop consisting of 80% orchard grass and 20% alfalfa. This field allows the grower to express, for the hay variety in this instance of the component block, the proportion of this variety in relation to the whole.</p>
+
+<p>We use proportions rather than percentages for simplicity, to conserve memory, and because some fractions simplify in decimal form to infinite series (e.g., one third).</p>
+
+<p>For memory conservation systems may implement this field using a data type of "int" and then convert to other data type(s) as necessary.</p>
+
+### Field [`variety_representation_result`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>int</dd>
+  <dt>Valid values</dt>
+  <dd>Enter an integer representing the estimated percentage of this hay for which this hay variety accounts based on actual observation or measurement, rounded to the nearest whole number. Allow for weeds and other varieties in making this estimate.</dd>
+</dl>
+
+<p>For each hay variety selected, the seller should express a percentage, rounded to the nearest percentage point, representing the seller's appraisal of this variety's contribution to the overall hay. A value of "100" for this field would correspond to pure, weed-free hay.</p>
+
+<p>For memory conservation systems may implement this field using a data type of "int" and then convert to other data type(s) as necessary.</p>
+
+### Field [`maturity_at_harvest`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Before blossom or heading | Early blossom or early heading | Mid-to-late bloom or head | Seed stage ]</dd>
+</dl>
+
+<p>Forage quality generally declines with maturity. This field allows the seller to disclose maturity for each hay variety present in the hay. Classification scheme sourced from page 6 of Bates (2007).</p>
+
+<p>For memory conservation systems may implement this field using a data type of "int" and then convert to other data type(s) as necessary.</p>
 
 ## Hay origin
 
@@ -143,9 +194,10 @@ Use the field [`source_field_elevation_units`]() to specify the unit of measure 
 <details>
   <summary>More information</summary>
   
-  <p>While we often think of climate as an atmospheric phenomenon, climate classification actually reflects what kind of vegetation naturally prevails in a certain area. The Köppen classification system is well-established and readily accessible. In future versions of the product definition, it may be prudent to allow users to choose from several classification schemes or else to use another by default.
+  <p>While we often think of climate as an atmospheric phenomenon, climate classification actually reflects what kind of vegetation naturally prevails in a certain area. The Köppen classification system is well-established and readily accessible. In future versions of the product definition, it may be prudent to allow users to choose from several classification schemes or else to use another by default.</p>
 
-  Systems implementing this standard may populate this field with values sourced automatically from other databases, based upon location information the user supplies.</p>
+  <p>Systems implementing this standard may populate this field with values sourced automatically from other databases, based upon location information the user supplies.</p>
+  
 </details>
 
 ### Field [`source_field_area`]()
@@ -332,9 +384,9 @@ Use the field [`amount_fertilized_units`]() to specify the unit of measure for t
 <details>
   <summary>More information</summary>
 
-  Mowing is generally the first step in harvesting hay and thus represents the commencement of a specific harvest. Identifying the harvest start date informs the consumer as to the age of the hay and season of the harvest. This information may also be useful in ascertaining local weather conditions for the harvest.
+  <p>Mowing is generally the first step in harvesting hay and thus represents the commencement of a specific harvest. Identifying the harvest start date informs the consumer as to the age of the hay and season of the harvest. This information may also be useful in ascertaining local weather conditions for the harvest.</p>
 
-  This note applies both to this field and to the [`harvest_date_end`]() field. The seller may lack specific knowledge of harvest start and end dates and only be able to estimate these dates. A protocol for using estimated dates is feasible through the use of double-zero values for day of month or even month of year. A double zero in the day field would mean that the seller is confident as to the month of the applicable harvest date but not the day. Double zeroes in both the day and month places would mean the seller is confident of the year of harvest but neither the month nor day.
+  <p>This note applies both to this field and to the [`harvest_date_end`]() field. The seller may lack specific knowledge of harvest start and end dates and only be able to estimate these dates. A protocol for using estimated dates is feasible through the use of double-zero values for day of month or even month of year. A double zero in the day field would mean that the seller is confident as to the month of the applicable harvest date but not the day. Double zeroes in both the day and month places would mean the seller is confident of the year of harvest but neither the month nor day.</p>
   
 </details>
   
@@ -346,9 +398,9 @@ Use the field [`amount_fertilized_units`]() to specify the unit of measure for t
   <dd>A date in YYYYMMDD format representing the conclusion date for the harvest for this hay.</dd>
 </dl>
 
-This date value may be same as, but not prior to, that for [`harvest_date_start`](). May not be more than two days after [`harvest_date_start`](), according to current, working definition of lot, if single-lot-traceability is claimed.
+<p>This date value may be same as, but not prior to, that for [`harvest_date_start`](). May not be more than two days after [`harvest_date_start`](), according to current, working definition of lot, if single-lot-traceability is claimed.</p>
 
-Systems implementing this standard should evaluate the difference in days between [`harvest_date_start`]() and [`harvest_date_end`]() and compare the result with the value provided for [`hay_single_lot`](). If [`hay_single_lot`]() is true, then the difference in days must be two or fewer.
+<p>Systems implementing this standard should evaluate the difference in days between [`harvest_date_start`]() and [`harvest_date_end`]() and compare the result with the value provided for [`hay_single_lot`](). If [`hay_single_lot`]() is true, then the difference in days must be two or fewer.<p>
 
 ### Field [`hay_cutting`]()
 <dl>
@@ -648,7 +700,27 @@ Systems implementing this standard may benefit from validation of these values a
   <dd>= [ Very leafy | Leafy | Slightly stemmy | Stemmy ]</dd>
 </dl>
 
-<p>Classification scheme sourced from page 6 of Bates (2018).</p>
+<p>Classification scheme sourced from page 6 of Bates (2007).</p>
+
+### Field [`hay_texture`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [Very soft and pliable | Soft | Slightly harsh | Harsh, brittle ]</dd>
+</dl>
+
+<p>Classification scheme sourced from page 6 of Bates (2007).</p>
+
+### Field [`hay_color`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>enum</dd>
+  <dt>Valid values</dt>
+  <dd>= [ Natural green color of crop | Light green | Yellow to slightly brownish | Brown or black ]</dd>
+</dl>
+
+<p>Classification scheme sourced from page 6 of Bates (2007).</p>
 
 ### Field [`organoleptic_factor_odor`]()
 <dl>
@@ -658,7 +730,7 @@ Systems implementing this standard may benefit from validation of these values a
   <dd>= [ Clean--"crop smell" | Dusty | Moldy | Somewhat sour | Sour | Rotten or otherwise foul ]</dd>
 </dl>
 
-<p>Classification scheme adapted from page 6 of Bates (2018).</p>
+<p>Classification scheme adapted from page 6 of Bates (2007).</p>
 
 ### Field [`organoleptic_factor_moldy`]()
 <dl>
