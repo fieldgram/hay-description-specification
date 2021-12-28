@@ -123,7 +123,9 @@ nav_order: 4
 
 <p>Forage quality generally declines with maturity. This field allows the seller to disclose maturity for each hay variety present in the hay. Classification scheme sourced from page 6 of Bates (2007).</p>
 
-<p>For memory conservation systems may implement this field using a data type of "int" and then convert to other data type(s) as necessary.</p>
+<p>
+  \=== END CONDITIONALLY-REPEATING COMPONENT BLOCK \===
+</p>
 
 ## Hay origin
 
