@@ -15,15 +15,13 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
-  <p>
-    Many producers of goods ranging from foods to medicines to industrial equipment employ the concept of a defined "lot" of a given product for quality control, assurance, and traceability purposes. We define "lot discipline" as the regular, commercial practice of identifying and segregating goods by defined lots.
+  <p> Many producers of goods ranging from foods to medicines to industrial equipment employ the concept of a defined "lot" of a given product for quality control, assurance, and traceability purposes. We define "lot discipline" as the regular, commercial practice of identifying and segregating goods by defined lots.</p>
 
-    The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (Ball et al., 2001), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.
+  <p>The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (Ball et al., 2001), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.</p>
 
-    This field may be implemented as a boolean data type, with "true" representing the seller's affirmation that hay he offers to the market is traceable to a single lot as defined. At some point in the future, should lot discipline become commonplace in the hay market, it may be sensible for this affirmation to be a default value of the product definition. In such case, sellers representing their hay in accordance with the standard description model would implicitly affirm that the hay they offer to the market is traceable by lot as such term is then defined.
+  <p>This field may be implemented as a boolean data type, with "true" representing the seller's affirmation that hay he offers to the market is traceable to a single lot as defined. At some point in the future, should lot discipline become commonplace in the hay market, it may be sensible for this affirmation to be a default value of the product definition. In such case, sellers representing their hay in accordance with the standard description model would implicitly affirm that the hay they offer to the market is traceable by lot as such term is then defined.</p>
 
-    Systems implementing this standard may generate lot identifiers automatically and then let users map their own identifiers to the system-generated ones. Presuming we validate that approach as useful, we will extend this definition by adding an optionally-repeating component block or comparable device to allow users to add one or more fields to hold these values. This would be useful, e.g., for linking test results to listings.
-  </p>
+  <p>Systems implementing this standard may generate lot identifiers automatically and then let users map their own identifiers to the system-generated ones. Presuming we validate that approach as useful, we will extend this definition by adding an optionally-repeating component block or comparable device to allow users to add one or more fields to hold these values. This would be useful, e.g., for linking test results to listings.</p>
 </details>
   
 ### Field [`intended_livestock_use`]()
@@ -972,13 +970,13 @@ Systems implementing this standard may benefit from validation of these values a
   <dd>A value corresponding to the soluble crude protein content of the sample in percentage terms.</dd>
 </dl>
 
-  ### Field [`degradable_protein_%_cp`]()
-  <dl>
-    <dt>Data type</dt>
-    <dd>float</dd>
-    <dt>Valid values</dt>
-    <dd>A value corresponding to the degadable crude protein content of the sample in percentage terms.</dd>
-  </dl>
+### Field [`degradable_protein_%_cp`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A value corresponding to the degadable crude protein content of the sample in percentage terms.</dd>
+</dl>
 
 ### Field [`neutral_detergent_insoluble_crude_protein`]()
 <dl>
