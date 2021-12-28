@@ -3,6 +3,7 @@ layout: default
 title: Field Test
 nav_order: 4
 ---
+
 # Hay description fields
 
 ### Field [`hay_single_lot_traceble`]()
@@ -15,6 +16,7 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
+  
   <p> Many producers of goods ranging from foods to medicines to industrial equipment employ the concept of a defined "lot" of a given product for quality control, assurance, and traceability purposes. We define "lot discipline" as the regular, commercial practice of identifying and segregating goods by defined lots.</p>
 
   <p>The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (Ball et al., 2001), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.</p>
@@ -70,9 +72,8 @@ nav_order: 4
 </details>
 
 <p>
-  \=== BEGIN CONDITIONALLY-REPEATING COMPONENT BLOCK \===
+  === BEGIN CONDITIONALLY-REPEATING COMPONENT BLOCK ===
 </p>
-
 ## Conditionally-repeating block [`hay_variety_component_block`]().
 
 ### Field [`hay_variety`]()
@@ -122,9 +123,8 @@ nav_order: 4
 </dl>
 
 <p>Forage quality generally declines with maturity. This field allows the seller to disclose maturity for each hay variety present in the hay. Classification scheme sourced from page 6 of Bates (2007).</p>
-
 <p>
-  \=== END CONDITIONALLY-REPEATING COMPONENT BLOCK \===
+  === END CONDITIONALLY-REPEATING COMPONENT BLOCK===
 </p>
 
 ## Hay origin
