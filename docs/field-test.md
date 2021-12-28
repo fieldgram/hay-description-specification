@@ -15,13 +15,15 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
-  <p>Many producers of goods ranging from foods to medicines to industrial equipment employ the concept of a defined "lot" of a given product for quality control, assurance, and traceability purposes. We define "lot discipline" as the regular, commercial practice of identifying and segregating goods by defined lots.
+  <p>
+    Many producers of goods ranging from foods to medicines to industrial equipment employ the concept of a defined "lot" of a given product for quality control, assurance, and traceability purposes. We define "lot discipline" as the regular, commercial practice of identifying and segregating goods by defined lots.
 
-  The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (Ball et al., 2001), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.
+    The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (Ball et al., 2001), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.
 
-  This field may be implemented as a boolean data type, with "true" representing the seller's affirmation that hay he offers to the market is traceable to a single lot as defined. At some point in the future, should lot discipline become commonplace in the hay market, it may be sensible for this affirmation to be a default value of the product definition. In such case, sellers representing their hay in accordance with the standard description model would implicitly affirm that the hay they offer to the market is traceable by lot as such term is then defined.
+    This field may be implemented as a boolean data type, with "true" representing the seller's affirmation that hay he offers to the market is traceable to a single lot as defined. At some point in the future, should lot discipline become commonplace in the hay market, it may be sensible for this affirmation to be a default value of the product definition. In such case, sellers representing their hay in accordance with the standard description model would implicitly affirm that the hay they offer to the market is traceable by lot as such term is then defined.
 
-  Systems implementing this standard may generate lot identifiers automatically and then let users map their own identifiers to the system-generated ones. Presuming we validate that approach as useful, we will extend this definition by adding an optionally-repeating component block or comparable device to allow users to add one or more fields to hold these values. This would be useful, e.g., for linking test results to listings.</p>
+    Systems implementing this standard may generate lot identifiers automatically and then let users map their own identifiers to the system-generated ones. Presuming we validate that approach as useful, we will extend this definition by adding an optionally-repeating component block or comparable device to allow users to add one or more fields to hold these values. This would be useful, e.g., for linking test results to listings.
+  </p>
 </details>
   
 ### Field [`intended_livestock_use`]()
@@ -42,13 +44,15 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
-  <p>A "sward" is an "expanse of short grass." Growers may choose to produce "pure" (monoculture) or "mixed" (polyculture) swards of hay and consequently, pure or mixed forage. A pure sward contains hay of the same species, subspecies, or variety, e.g., the Tifton 85 cultivar of bermuda grass. A mixed sward contains two or more species, subspecies, or varieties, e.g., an alfalfa/timothy mix.
+  <p>
+    A "sward" is an "expanse of short grass." Growers may choose to produce "pure" (monoculture) or "mixed" (polyculture) swards of hay and consequently, pure or mixed forage. A pure sward contains hay of the same species, subspecies, or variety, e.g., the Tifton 85 cultivar of bermuda grass. A mixed sward contains two or more species, subspecies, or varieties, e.g., an alfalfa/timothy mix.
 
-  This field supports expression of the grower's intention and not necessarily the result. If implemented as a boolean data type as suggested, "true" expresses that the grower intended to produce mixed hay, while "false" expresses that the grower intended to produce pure hay.
+    This field supports expression of the grower's intention and not necessarily the result. If implemented as a boolean data type as suggested, "true" expresses that the grower intended to produce mixed hay, while "false" expresses that the grower intended to produce pure hay.
 
-  The emphasis on intention rather than result accounts for the possibility of infiltration of a sward by unintended vegetation ("weeds"). This unintended vegetation may even serve as a forage crop itself. For example, bahia grass may deliberately be raised as hay, but when infiltrating an otherwise pure sward of coastal bermuda grass, bahia grass acts as a weed. And, in some markets, all bermuda grass hays are treated as noxious weeds.
+    The emphasis on intention rather than result accounts for the possibility of infiltration of a sward by unintended vegetation ("weeds"). This unintended vegetation may even serve as a forage crop itself. For example, bahia grass may deliberately be raised as hay, but when infiltrating an otherwise pure sward of coastal bermuda grass, bahia grass acts as a weed. And, in some markets, all bermuda grass hays are treated as noxious weeds.
 
-  If a grower intends to produce a pure crop but what results is a crop with significant weeds, this field should still take a value of "false," as the grower intended a pure sward. Similarly, if the grower intends to produce a mixed crop but only one variety survives to harvest, this field should still take a value of "true." We use the [`variety_representation_target`]() and [`variety_representation_result`]() fields, respectively, part of a conditionally-repeating group of fields, to account for differences between intentions and results.</p>
+    If a grower intends to produce a pure crop but what results is a crop with significant weeds, this field should still take a value of "false," as the grower intended a pure sward. Similarly, if the grower intends to produce a mixed crop but only one variety survives to harvest, this field should still take a value of "true." We use the [`variety_representation_target`]() and [`variety_representation_result`]() fields, respectively, part of a conditionally-repeating group of fields, to account for differences between intentions and results.
+  </p>
 </details>
 
 ### Field [`hay_variety_instances`]()
@@ -61,12 +65,13 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
+  <p>
+    This field serves both marketing and technological purposes. From a marketing perspective, it allows the farmer to express how many varieties of hay he has meant to include in his bales. Technologically, it reports how many instances of the following [`hay_variety_component_block`]() a message or database table will contain. 
   
-  This field serves both marketing and technological purposes. From a marketing perspective, it allows the farmer to express how many varieties of hay he has meant to include in his bales. Technologically, it reports how many instances of the following [`hay_variety_component_block`]() a message or database table will contain. 
-  
-  Arguably, the presence of this field makes the preceding, [`hay_mixed_sward`]() field superfluous. Implicitly, a value of "1" for this field means "pure sward," whereas a value greater than "1" means "mixed sward." We include both fields for the time being, principally to emphasize the importance of disclosing whether hay is pure or mixed and to help draw a distinction between what the grower intends and what actually results. We concede that this field alone may suffice and that the product definition may be improved through future removal of the [`hay_mixed_sward`]() field.
+    Arguably, the presence of this field makes the preceding, [`hay_mixed_sward`]() field superfluous. Implicitly, a value of "1" for this field means "pure sward," whereas a value greater than "1" means "mixed sward." We include both fields for the time being, principally to emphasize the importance of disclosing whether hay is pure or mixed and to help draw a distinction between what the grower intends and what actually results. We concede that this field alone may suffice and that the product definition may be improved through future removal of the [`hay_mixed_sward`]() field.
 
-  Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.
+    Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.
+  </p>
 </details>
 
 ### Placeholder for Conditionally-repeating block
@@ -809,21 +814,21 @@ Systems implementing this standard may benefit from validation of these values a
 
 ## Base values
 
-  ### Field [`moisture_content`]()
-  <dl>
-    <dt>Data type</dt>
-    <dd>float</dd>
-    <dt>Valid values</dt>
-    <dd>A value corresponding the percentage of water in the sample. This is the complement of dry matter.</dd>
-  </dl>
+### Field [`moisture_content`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A value corresponding the percentage of water in the sample. This is the complement of dry matter.</dd>
+</dl>
 
-  ### Field [`dry_matter`]()
-  <dl>
-    <dt>Data type</dt>
-    <dd>float</dd>
-    <dt>Valid values</dt>
-    <dd>A value corresponding the percentage of dry matter in the sample. This is the complement of moisture content.</dd>
-  </dl>
+### Field [`dry_matter`]()
+<dl>
+  <dt>Data type</dt>
+  <dd>float</dd>
+  <dt>Valid values</dt>
+  <dd>A value corresponding the percentage of dry matter in the sample. This is the complement of moisture content.</dd>
+</dl>
 
 ## Index values
 
@@ -917,7 +922,7 @@ Systems implementing this standard may benefit from validation of these values a
   <dd>A value corresponding to the net energy gain of the sample in Mcal/kg.</dd>
 </dl>
 
- ### Field [`TDN1X`]()
+### Field [`TDN1X`]()
 <dl>
   <dt>Data type</dt>
   <dd>float</dd>
