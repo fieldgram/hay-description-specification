@@ -24,6 +24,7 @@ nav_order: 4
   <p>This field may be implemented as a boolean data type, with "true" representing the seller's affirmation that hay he offers to the market is traceable to a single lot as defined. At some point in the future, should lot discipline become commonplace in the hay market, it may be sensible for this affirmation to be a default value of the product definition. In such case, sellers representing their hay in accordance with the standard description model would implicitly affirm that the hay they offer to the market is traceable by lot as such term is then defined.</p>
 
   <p>Systems implementing this standard may generate lot identifiers automatically and then let users map their own identifiers to the system-generated ones. Presuming we validate that approach as useful, we will extend this definition by adding an optionally-repeating component block or comparable device to allow users to add one or more fields to hold these values. This would be useful, e.g., for linking test results to listings.</p>
+  
 </details>
   
 ### Field [`intended_livestock_use`]()
@@ -51,6 +52,7 @@ nav_order: 4
   <p>The emphasis on intention rather than result accounts for the possibility of infiltration of a sward by unintended vegetation ("weeds"). This unintended vegetation may even serve as a forage crop itself. For example, bahia grass may deliberately be raised as hay, but when infiltrating an otherwise pure sward of coastal bermuda grass, bahia grass acts as a weed. And, in some markets, all bermuda grass hays are treated as noxious weeds.</p>
 
   <p>If a grower intends to produce a pure crop but what results is a crop with significant weeds, this field should still take a value of "false," as the grower intended a pure sward. Similarly, if the grower intends to produce a mixed crop but only one variety survives to harvest, this field should still take a value of "true." We use the [`variety_representation_target`]() and [`variety_representation_result`]() fields, respectively, part of a conditionally-repeating group of fields, to account for differences between intentions and results.</p>
+  
 </details>
 
 ### Field [`hay_variety_instances`]()
@@ -71,12 +73,13 @@ nav_order: 4
   <p>Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.</p>
 </details>
 
-<p>
-  === BEGIN CONDITIONALLY-REPEATING COMPONENT BLOCK ===
-</p>
-## Conditionally-repeating block [`hay_variety_component_block`]().
+<p>=== BEGIN CONDITIONALLY-REPEATING COMPONENT BLOCK ===</p>
 
-### Field [`hay_variety`]()
+### Conditionally-repeating block [`hay_variety_component_block`]().
+
+<p>Repeat for number of hay-variety instances in sward, if two or more. Otherwise use each element once.</p>
+
+#### Field [`hay_variety`]()
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -88,7 +91,7 @@ nav_order: 4
 
 <p>Because of the large number of plant varieties from which hay may be produced, systems implementing this standard may benefit from the use of auto-completion functionality in user-interfaces controls. This may ease the variety-specification task for the seller.</p>
 
-### Field [`variety_representation_target`]()
+#### Field [`variety_representation_target`]()
 <dl>
   <dt>Data type</dt>
   <dd>int</dd>
@@ -102,7 +105,7 @@ nav_order: 4
 
 <p>For memory conservation systems may implement this field using a data type of "int" and then convert to other data type(s) as necessary.</p>
 
-### Field [`variety_representation_result`]()
+#### Field [`variety_representation_result`]()
 <dl>
   <dt>Data type</dt>
   <dd>int</dd>
@@ -114,7 +117,7 @@ nav_order: 4
 
 <p>For memory conservation systems may implement this field using a data type of "int" and then convert to other data type(s) as necessary.</p>
 
-### Field [`maturity_at_harvest`]()
+#### Field [`maturity_at_harvest`]()
 <dl>
   <dt>Data type</dt>
   <dd>enum</dd>
@@ -123,9 +126,7 @@ nav_order: 4
 </dl>
 
 <p>Forage quality generally declines with maturity. This field allows the seller to disclose maturity for each hay variety present in the hay. Classification scheme sourced from page 6 of Bates (2007).</p>
-<p>
-  === END CONDITIONALLY-REPEATING COMPONENT BLOCK===
-</p>
+<p>=== END CONDITIONALLY-REPEATING COMPONENT BLOCK===</p>
 
 ## Hay origin
 
