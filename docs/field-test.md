@@ -5,6 +5,10 @@ nav_order: 4
 ---
 # Hay description fields
 
+<details>
+  
+  <summary>Click to expand</summary>
+
 ### Field [`hay_single_lot_traceble`]()
 <dl>
   <dt>Data type</dt>
@@ -17,7 +21,7 @@ nav_order: 4
   <summary>More information</summary>
   <p>Many producers of goods ranging from foods to medicines to industrial equipment employ the concept of a defined "lot" of a given product for quality control, assurance, and traceability purposes. We define "lot discipline" as the regular, commercial practice of identifying and segregating goods by defined lots.
 
-  The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (see citation for "Ball" in the reference section below), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.
+  The production, marketing, and purchase of hay traceable to defined lots is a beneficial practice with broad scientific and agronomic support. A single lot of hay is "forage taken from the same farm, field, and cut under uniform conditions within a 48-hour time period. A lot can represent several truck or wagon loads, but all the forage should have been harvested and stored under identical conditions." We adopt this definition from the sidebar on page 10 of Understanding Forage Quality (Ball et al., 2001), but note that it appears in substantially the same form in numerous academic and agricultural extension service publications.
 
   This field may be implemented as a boolean data type, with "true" representing the seller's affirmation that hay he offers to the market is traceable to a single lot as defined. At some point in the future, should lot discipline become commonplace in the hay market, it may be sensible for this affirmation to be a default value of the product definition. In such case, sellers representing their hay in accordance with the standard description model would implicitly affirm that the hay they offer to the market is traceable by lot as such term is then defined.
 
@@ -61,11 +65,12 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
-  <p>This field serves both marketing and technological purposes. From a marketing perspective, it allows the farmer to express how many varieties of hay he has meant to include in his bales. Technologically, it reports how many instances of the following [`hay_variety_component_block`]() a message or database table will contain.
-
+  
+  This field serves both marketing and technological purposes. From a marketing perspective, it allows the farmer to express how many varieties of hay he has meant to include in his bales. Technologically, it reports how many instances of the following [`hay_variety_component_block`]() a message or database table will contain. 
+  
   Arguably, the presence of this field makes the preceding, [`hay_mixed_sward`]() field superfluous. Implicitly, a value of "1" for this field means "pure sward," whereas a value greater than "1" means "mixed sward." We include both fields for the time being, principally to emphasize the importance of disclosing whether hay is pure or mixed and to help draw a distinction between what the grower intends and what actually results. We concede that this field alone may suffice and that the product definition may be improved through future removal of the [`hay_mixed_sward`]() field.
 
-  Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.</p>
+  Systems implementing this standard should validate values for this field against values for the preceding, hay_mixed_sward field. If hay_mixed_sward is false, the value of this field should be "1." On the other hand, if [`hay_mixed_sward`]() is true, then the value of this field should be "2" or greater.
 </details>
 
 ### Placeholder for Conditionally-repeating block
@@ -113,8 +118,10 @@ nav_order: 4
   <dt>Data type</dt>
   <dd>int</dd>
   <dt>Valid values</dt>
-  <dd>An integer representing the magnitude of the average elevation of the source field(s) for this hay in relation to sea level, rounded to the nearest whole number, whether in meters or feet. Use the field [`source_field_elevation_units`]() to specify the unit of measure for this magnitude.</dd>
+  <dd>An integer representing the magnitude of the average elevation of the source field(s) for this hay in relation to sea level, rounded to the nearest whole number, whether in meters or feet.</dd>
 </dl>
+
+Use the field [`source_field_elevation_units`]() to specify the unit of measure for this magnitude.
 
 <p> The elevation of a field determines in part the temperatures and other weather conditions under which forage is grown and which weeds and pests are likely to require management.</p>
 
@@ -136,6 +143,7 @@ nav_order: 4
 
 <details>
   <summary>More information</summary>
+  
   <p>While we often think of climate as an atmospheric phenomenon, climate classification actually reflects what kind of vegetation naturally prevails in a certain area. The Köppen classification system is well-established and readily accessible. In future versions of the product definition, it may be prudent to allow users to choose from several classification schemes or else to use another by default.
 
   Systems implementing this standard may populate this field with values sourced automatically from other databases, based upon location information the user supplies.</p>
@@ -146,8 +154,10 @@ nav_order: 4
   <dt>Data type</dt>
   <dd>int</dd>
   <dt>Valid values</dt>
-  <dd>An integer representing the magnitude of the area of the source field(s) for this hay, rounded to the nearest whole number, whether in hectares or acres.  Use "0" if unknown. Use the field [`source_field_area_units`]() to specify the unit of measure for this magnitude.</dd>
+  <dd>An integer representing the magnitude of the area of the source field(s) for this hay, rounded to the nearest whole number, whether in hectares or acres.  Use "0" if unknown.</dd>
 </dl>
+
+Use the field [`source_field_area_units`]() to specify the unit of measure for this magnitude.
 
 The variability of hay from one bale to the next depends on a variety of factors, including soil conditions, weather, weeds, and pests. As a rule, the larger the area of the source field (or fields) for a forage, the greater will be the variability in quality and anti-quality factors for that forage.
 
@@ -214,32 +224,41 @@ The variability of hay from one bale to the next depends on a variety of factors
   <dt>Data type</dt>
   <dd>int</dd>
   <dt>Valid values</dt>
-  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last nitrogen application for this hay, or "0" if not nitrogen-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+  <dd>
+    An integer representing the magnitude, rounded to the nearest whole unit, of the last nitrogen application for this hay, or "0" if not nitrogen-fertilized.</dd>
 </dl>
+
+Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.
 
 ### Field [`amount_fertilized_nitrogen`]()
 <dl>
   <dt>Data type</dt>
   <dd>int</dd>
   <dt>Valid values</dt>
-  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last nitrogen application for this hay, or "0" if not nitrogen-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last nitrogen application for this hay, or "0" if not nitrogen-fertilized.</dd>
 </dl>
+
+Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.
 
 ### Field [`amount_fertilized_potassium`]()
 <dl>
   <dt>Data type</dt>
   <dd>int</dd>
   <dt>Valid values</dt>
-  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last potassium application for this hay, or "0" if not potassium-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last potassium application for this hay, or "0" if not potassium-fertilized.</dd>
 </dl>
+
+Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.
 
 ### Field [`amount_fertilized_phosphorus`]()
 <dl>
   <dt>Data type</dt>
   <dd>int</dd>
   <dt>Valid values</dt>
-  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last phosphorus application for this hay, or "0" if not phosphorus-fertilized. Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.</dd>
+  <dd>An integer representing the magnitude, rounded to the nearest whole unit, of the last phosphorus application for this hay, or "0" if not phosphorus-fertilized.</dd>
 </dl>
+
+Use the field [`amount_fertilized_units`]() to specify the unit of measure for this magnitude.
 
 ### Field [`amount_fertilized_units`]()
 <dl>
@@ -313,9 +332,11 @@ The variability of hay from one bale to the next depends on a variety of factors
 
 <details>
   <summary>More information</summary>
-  <p>Mowing is generally the first step in harvesting hay and thus represents the commencement of a specific harvest. Identifying the harvest start date informs the consumer as to the age of the hay and season of the harvest. This information may also be useful in ascertaining local weather conditions for the harvest.
 
-  This note applies both to this field and to the [`harvest_date_end`]() field. The seller may lack specific knowledge of harvest start and end dates and only be able to estimate these dates. A protocol for using estimated dates is feasible through the use of double-zero values for day of month or even month of year. A double zero in the day field would mean that the seller is confident as to the month of the applicable harvest date but not the day. Double zeroes in both the day and month places would mean the seller is confident of the year of harvest but neither the month nor day.</p>
+  Mowing is generally the first step in harvesting hay and thus represents the commencement of a specific harvest. Identifying the harvest start date informs the consumer as to the age of the hay and season of the harvest. This information may also be useful in ascertaining local weather conditions for the harvest.
+
+  This note applies both to this field and to the [`harvest_date_end`]() field. The seller may lack specific knowledge of harvest start and end dates and only be able to estimate these dates. A protocol for using estimated dates is feasible through the use of double-zero values for day of month or even month of year. A double zero in the day field would mean that the seller is confident as to the month of the applicable harvest date but not the day. Double zeroes in both the day and month places would mean the seller is confident of the year of harvest but neither the month nor day.
+  
 </details>
   
 ### Field [`harvest_date_end`]()
@@ -323,10 +344,12 @@ The variability of hay from one bale to the next depends on a variety of factors
   <dt>Data type</dt>
   <dd>datetime</dd>
   <dt>Valid values</dt>
-  <dd>A date in YYYYMMDD format representing the conclusion date for the harvest for this hay. This date value may be same as, but not prior to, that for [`harvest_date_start'](). May not be more than two days after [`harvest_date_start`](), according to current, working definition of lot, if single-lot-traceability is claimed.</dd>
+  <dd>A date in YYYYMMDD format representing the conclusion date for the harvest for this hay.</dd>
 </dl>
 
-<p>Systems implementing this standard should evaluate the difference in days between [`harvest_date_start`]() and [`harvest_date_end`]() and compare the result with the value provided for [`hay_single_lot`](). If [`hay_single_lot`]() is true, then the difference in days must be two or fewer.</p>
+This date value may be same as, but not prior to, that for [`harvest_date_start`](). May not be more than two days after [`harvest_date_start`](), according to current, working definition of lot, if single-lot-traceability is claimed.
+
+Systems implementing this standard should evaluate the difference in days between [`harvest_date_start`]() and [`harvest_date_end`]() and compare the result with the value provided for [`hay_single_lot`](). If [`hay_single_lot`]() is true, then the difference in days must be two or fewer.
 
 ### Field [`hay_cutting`]()
 <dl>
@@ -341,10 +364,12 @@ The variability of hay from one bale to the next depends on a variety of factors
   <dt>Data type</dt>
   <dd>int</dd>
   <dt>Valid values</dt>
-  <dd>An integer representing the magnitude of the yield from the source field(s) for this hay, rounded to the nearest whole number, whether in metric, long, or short tons. Use the [`field source_field_yield_units`]() to specify the unit of measure for this magnitude.</dd>
+  <dd>An integer representing the magnitude of the yield from the source field(s) for this hay, rounded to the nearest whole number, whether in metric, long, or short tons.</dd>
 </dl>
 
-<p>For purposes of this field, we define "yield" as the product of (a) number of bales and (b) average bale weight.</p>
+Use the [`field source_field_yield_units`]() to specify the unit of measure for this magnitude.
+
+For purposes of this field, we define "yield" as the product of (a) number of bales and (b) average bale weight.
 
 ### Field [`source_field_yield_units`]()
 <dl>
@@ -504,7 +529,7 @@ The variability of hay from one bale to the next depends on a variety of factors
   <dd>= [ Twine, two-tie | Twine, three-tie | Twine, four-tie | Twine, five-tie | Twine, six-tie | Wire, two-tie | Wire, three-tie | Fabric band, two-tie | Fabric band, three-tie | Plastic band, two-tie | Plastic band, three-tie | Metal band, two-tie | Metal band, three-tie | Netwrap | John Deere CoverEdge ]</dd>
 </dl>
 
-<p>Systems implementing this standard may benefit from validation of these values against the value provided for the [`field bale_shape`](). The "Netwrap" and "John Deere CoverEdge" binding types apply only to round bales.</p>
+Systems implementing this standard may benefit from validation of these values against the value provided for the [`field bale_shape`](). The "Netwrap" and "John Deere CoverEdge" binding types apply only to round bales.
 
 ### Field [`hay_compression`]()
 <dl>
@@ -527,9 +552,11 @@ The variability of hay from one bale to the next depends on a variety of factors
 
 <details>
   <summary>More information</summary>
-  <p>Express bale weights, whether intended or as assessed, as an average across all bales offered for sale under this product definition. If lack of uniformity would make such an expression misleading, indicate as such using the value "Grower estimate--disparate bales" in the field [`bale_weight_assessment_method`]().
+  
+  Express bale weights, whether intended or as assessed, as an average across all bales offered for sale under this product definition. If lack of uniformity would make such an expression misleading, indicate as such using the value "Grower estimate--disparate bales" in the field [`bale_weight_assessment_method`]().
 
-  Systems implementing this standard may wish to validate this field for numerical input and reasonable magnitudes.</p>
+  Systems implementing this standard may wish to validate this field for numerical input and reasonable magnitudes.
+  
 </details>
 
 ### Field [`bale_weight_units`]()
@@ -715,6 +742,8 @@ The variability of hay from one bale to the next depends on a variety of factors
   <dt>Valid values</dt>
   <dd>= [ Ground | Pallets | Wood | Concrete | Other ]</dd>
 </dl>
+  
+</details>
 
 # Forage analysis fields
 
@@ -1291,3 +1320,37 @@ The variability of hay from one bale to the next depends on a variety of factors
 </details>
 
 </details>
+
+# References
+
+302 KAR 37:010. [Standard Hay Grading Program for the State of Kentucky](https://apps.legislature.ky.gov/law/kar/302/037/010.pdf) [PDF]. Retrieved June 19, 2018.
+
+Baker, R. and S. Ball. 2011. [Variations in Alfalfa Hay Grading](http://lubbock.tamu.edu/files/2011/10/nmsugrading_10.pdf) [PDF]. New Mexico State University Cooperative Extension Service, Guide A-329. Retrieved June 19, 2018.
+
+Ball, D.M., M. Collins, G.D. Lacefield, N.P. Martin, D.A. Mertens, K.E. Olson, D.H. Putnam, D.J. Undersander, and M.W. Wolf. 2001. [Understanding Forage Quality](http://pss.uvm.edu/pdpforage/Materials/ForageQuality/Understanding_Forage_Quality_Ball.pdf) [PDF]. American Farm Bureau Federation Publication 1-01, Park Ridge, IL, via National Forage Testing Association. Retrieved June 19, 2018.
+
+Bates, G. [High Quality Hay Production](https://shelbycountytn.gov/DocumentCenter/View/1183/High-Quality-Hay-Production?bidId=) [PDF]. University of Tennessee Agricultural Extension Service Publication SP 437-A. Retrieved June 19, 2018.
+
+Canadian Food Inspection Agency. 2013. D-03-14: [Canadian Hay Certification Program to certify hay for export](https://inspection.canada.ca/plant-health/invasive-species/directives/grains-and-field-crops/d-03-14/eng/1323829800901/1323829873124). Retrieved June 19, 2018.
+
+Carolina Farm Stewardship Association. [Organic and Non-GMO Feed and Hay Sources Finder](https://www.carolinafarmstewards.org/organic-and-non-gmo-feed-and-hay-sources-for-the-carolinas/). Retrieved June 19, 2018.
+
+Corriher, V., T. Provin, and L. Redmon. 2010. [Hay Production in Texas](http://soiltesting.tamu.edu/publications/E-273.pdf) [PDF]. Texas A&M AgriLife Extension, E-273. Retrieved June 19, 2018.
+
+Corriher, V. and L. Redmon. 2009. [Bermudagrass Varieties, Hybrids and Blends for Texas](http://publications.tamu.edu/FORAGE/PUB_forage_Bermudagrass%20Varieties.pdf) [PDF]. Texas A&M AgriLife Extension, SCS-2009-11. Retrieved June 19, 2018.
+
+Guerrero, J. 2001. [Marketing Standards for Southern California Grass Export Hay](https://alfalfa.ucdavis.edu/+symposium/proceedings/2001/01-207.pdf) [PDF]. University of California Cooperative Extension. Retrieved June 19, 2018.
+
+Lawrence, L. and R. Coleman. 2000. [Choosing Hay for Horses](http://www2.ca.uky.edu/agcomm/pubs/id/id146/id146.pdf) [PDF]. University of Kentucky Cooperative Extension Service, ID-146. Retrieved June 19, 2018.
+
+Marsalis, M., G. Hagevoort, and L. Lauriault. 2009. [Hay Quality, Sampling, and Testing](https://aces.nmsu.edu/pubs/_circulars/CR641/). New Mexico State University Cooperative Extension Service, Circular 641. Retrieved June 19, 2018.
+
+National Alfalfa Alliance. [Alfalfa: The High Quality Hay for Horses](http://www.alfalfa.org/pdf/Alfalfa%20for%20Horses%20(low%20res).pdf) [PDF]. Retrieved June 19, 2018.
+
+Putnam, D. 2010. [Changing Forage Quality Testing for Alfalfa Hay Markets](https://alfalfa.ucdavis.edu/+symposium/2010/files/talks/CAS24_PutnamQualityMarkets.pdf) [PDF]. University of California Department of Plant Sciences (UC Davis). Retrieved June 19, 2018.
+
+Putnam, D. 2003. [Recommended Principles for Proper Hay Sampling](https://wolfe.ca.uky.edu/files/principals_for_proper_hay_testing.pdf) [PDF]. University of California, Davis, via National Forage Testing Association. Retrieved June 19, 2018.
+
+Provin, T. and J. Pitt. 2002. [Sampling Hay Bales and Pastures for Forage Analysis](http://ward.agrilife.org/files/2011/07/tmppdfs_45776-e148.pdf) [PDF]. Texas A&M AgriLife Extension, E-148. Retrieved June 19, 2018.
+
+
